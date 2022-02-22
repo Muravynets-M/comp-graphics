@@ -1,8 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Math", "RT.Math\RT.Math.csproj", "{DEE3B70E-32E8-41FA-A266-A0BD905BA145}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Primitives", "RT.Primitives\RT.Primitives.csproj", "{DE8E58B8-4475-4DB2-96FE-6D40839BE899}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEE3B70E-32E8-41FA-A266-A0BD905BA145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE3B70E-32E8-41FA-A266-A0BD905BA145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE3B70E-32E8-41FA-A266-A0BD905BA145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE3B70E-32E8-41FA-A266-A0BD905BA145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE8E58B8-4475-4DB2-96FE-6D40839BE899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE8E58B8-4475-4DB2-96FE-6D40839BE899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE8E58B8-4475-4DB2-96FE-6D40839BE899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE8E58B8-4475-4DB2-96FE-6D40839BE899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

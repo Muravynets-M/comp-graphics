@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "RT.Math/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RT.Math.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.Math.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "RT.Math/1.0.0": {
+      "type": "project",
+      "path": "../RT.Math/RT.Math.csproj",
+      "msbuildProject": "../RT.Math/RT.Math.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "RT.Math >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/m-muravynets/.nuget/packages/": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/RT.Math.csproj": {
+              "projectPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/RT.Math.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

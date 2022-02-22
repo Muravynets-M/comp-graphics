@@ -1,0 +1,12 @@
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/bin/Debug/net6.0/RT.Math.deps.json
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/bin/Debug/net6.0/RT.Math.dll
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/bin/Debug/net6.0/ref/RT.Math.dll
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/bin/Debug/net6.0/RT.Math.pdb
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.csproj.AssemblyReference.cache
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.GeneratedMSBuildEditorConfig.editorconfig
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.AssemblyInfoInputs.cache
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.AssemblyInfo.cs
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.csproj.CoreCompileInputs.cache
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.dll
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/ref/RT.Math.dll
+/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.pdb

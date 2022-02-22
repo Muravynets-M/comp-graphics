@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Math", "RT.Math\RT.Math.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Primitives", "RT.Primitives\RT.Primitives.csproj", "{DE8E58B8-4475-4DB2-96FE-6D40839BE899}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Render", "RT.Render\RT.Render.csproj", "{D7985313-30CF-4487-9D7B-B9174AEECE25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Primitives.Test", "RT.Primitives.Test\RT.Primitives.Test.csproj", "{1A4D30A0-A446-401E-87A6-B806423D55B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{DE8E58B8-4475-4DB2-96FE-6D40839BE899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE8E58B8-4475-4DB2-96FE-6D40839BE899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE8E58B8-4475-4DB2-96FE-6D40839BE899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7985313-30CF-4487-9D7B-B9174AEECE25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7985313-30CF-4487-9D7B-B9174AEECE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7985313-30CF-4487-9D7B-B9174AEECE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7985313-30CF-4487-9D7B-B9174AEECE25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4D30A0-A446-401E-87A6-B806423D55B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4D30A0-A446-401E-87A6-B806423D55B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4D30A0-A446-401E-87A6-B806423D55B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4D30A0-A446-401E-87A6-B806423D55B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

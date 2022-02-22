@@ -1,3 +1,4 @@
+using System.Drawing;
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Traceable;
 
@@ -27,15 +28,15 @@ public class Sphere : ITraceable
             return null;
 
         var sqrtD = MathF.Sqrt(discriminant);
-        var root = (-2f * b - sqrtD) / (2 * a);
+        var root = (-b - sqrtD) / (2 * a);
 
         if (root < minT || root > maxT)
         {
-            root = (-2f * b + sqrtD) / (2 * a);
+            root = (-b + sqrtD) / (2 * a);
             if (root < minT || root > maxT)
                 return null;
         }
 
-        return new HitResult(Vector3.ToPoint(r.Cast(root)), (r.Cast(root) - Center) / Radius, root);
+        return new HitResult((Point3) r.Cast(root), (r.Cast(root) - Center) / Radius, root);
     }
 }

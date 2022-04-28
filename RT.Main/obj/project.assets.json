@@ -1,0 +1,125 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "RT.Math/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RT.Math.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.Math.dll": {}
+        }
+      },
+      "RT.Primitives/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RT.Math": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RT.Primitives.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.Primitives.dll": {}
+        }
+      },
+      "RT.Render/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RT.Math": "1.0.0",
+          "RT.Primitives": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RT.Render.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.Render.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RT.Math/1.0.0": {
+      "type": "project",
+      "path": "../RT.Math/RT.Math.csproj",
+      "msbuildProject": "../RT.Math/RT.Math.csproj"
+    },
+    "RT.Primitives/1.0.0": {
+      "type": "project",
+      "path": "../RT.Primitives/RT.Primitives.csproj",
+      "msbuildProject": "../RT.Primitives/RT.Primitives.csproj"
+    },
+    "RT.Render/1.0.0": {
+      "type": "project",
+      "path": "../RT.Render/RT.Render.csproj",
+      "msbuildProject": "../RT.Render/RT.Render.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "RT.Render >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/misha/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/misha/RiderProjects/comp-graphics/RT.Main/RT.Main.csproj",
+      "projectName": "RT.Main",
+      "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Main/RT.Main.csproj",
+      "packagesPath": "/Users/misha/.nuget/packages/",
+      "outputPath": "/Users/misha/RiderProjects/comp-graphics/RT.Main/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/misha/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj": {
+              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

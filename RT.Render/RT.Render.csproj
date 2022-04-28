@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\RT.Math\RT.Math.csproj" />
+      <ProjectReference Include="..\RT.Primitives\RT.Primitives.csproj" />
     </ItemGroup>
 
 </Project>

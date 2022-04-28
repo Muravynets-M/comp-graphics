@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/m-muravynets/.nuget/packages/": {}
+    "/Users/misha/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/RT.Math.csproj",
+      "projectUniqueName": "/Users/misha/RiderProjects/comp-graphics/RT.Math/RT.Math.csproj",
       "projectName": "RT.Math",
-      "projectPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/RT.Math.csproj",
-      "packagesPath": "/Users/m-muravynets/.nuget/packages/",
-      "outputPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/",
+      "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Math/RT.Math.csproj",
+      "packagesPath": "/Users/misha/.nuget/packages/",
+      "outputPath": "/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/m-muravynets/.nuget/NuGet/NuGet.Config"
+        "/Users/misha/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

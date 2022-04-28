@@ -6007,19 +6007,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/m-muravynets/.nuget/packages/": {}
+    "/Users/misha/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Primitives.Test/RT.Primitives.Test.csproj",
+      "projectUniqueName": "/Users/misha/RiderProjects/comp-graphics/RT.Primitives.Test/RT.Primitives.Test.csproj",
       "projectName": "RT.Primitives.Test",
-      "projectPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Primitives.Test/RT.Primitives.Test.csproj",
-      "packagesPath": "/Users/m-muravynets/.nuget/packages/",
-      "outputPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Primitives.Test/obj/",
+      "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Primitives.Test/RT.Primitives.Test.csproj",
+      "packagesPath": "/Users/misha/.nuget/packages/",
+      "outputPath": "/Users/misha/RiderProjects/comp-graphics/RT.Primitives.Test/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/m-muravynets/.nuget/NuGet/NuGet.Config"
+        "/Users/misha/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -6031,8 +6031,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Primitives/RT.Primitives.csproj": {
-              "projectPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Primitives/RT.Primitives.csproj"
+            "/Users/misha/RiderProjects/comp-graphics/RT.Primitives/RT.Primitives.csproj": {
+              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Primitives/RT.Primitives.csproj"
             }
           }
         }

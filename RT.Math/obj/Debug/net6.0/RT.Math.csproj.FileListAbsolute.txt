@@ -10,3 +10,15 @@
 /Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.dll
 /Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/ref/RT.Math.dll
 /Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.pdb
+/Users/misha/RiderProjects/comp-graphics/RT.Math/bin/Debug/net6.0/RT.Math.deps.json
+/Users/misha/RiderProjects/comp-graphics/RT.Math/bin/Debug/net6.0/RT.Math.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Math/bin/Debug/net6.0/ref/RT.Math.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Math/bin/Debug/net6.0/RT.Math.pdb
+/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.csproj.AssemblyReference.cache
+/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.GeneratedMSBuildEditorConfig.editorconfig
+/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.AssemblyInfoInputs.cache
+/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.AssemblyInfo.cs
+/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.csproj.CoreCompileInputs.cache
+/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/Debug/net6.0/ref/RT.Math.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/Debug/net6.0/RT.Math.pdb

@@ -7,4 +7,4 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RT.Primitives.Test
-build_property.ProjectDir = /Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Primitives.Test/
+build_property.ProjectDir = /Users/misha/RiderProjects/comp-graphics/RT.Primitives.Test/

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PsoyL55B1ZmCo8pcVz75MaEMJGodLIsF8UVjQQOW2GarMKP2ETKWL7cXl4C5xEWUYTITQ4gu95uW3+phdjPGjA==",
+  "dgSpecHash": "y238SzoRSUWgNo7gwfLvn5kq+7tmbsRTtGKMkeRMGyrZ/Phe+X00zlLc5tdjKL+uUoS8KnNhCiJXCHdi8KzM7g==",
   "success": true,
-  "projectFilePath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Render/RT.Render.csproj",
+  "projectFilePath": "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

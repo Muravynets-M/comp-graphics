@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Render", "RT.Render\RT.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Primitives.Test", "RT.Primitives.Test\RT.Primitives.Test.csproj", "{1A4D30A0-A446-401E-87A6-B806423D55B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Main", "RT.Main\RT.Main.csproj", "{8261E07F-9205-4B8B-A3D3-7B6EED069D6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{1A4D30A0-A446-401E-87A6-B806423D55B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A4D30A0-A446-401E-87A6-B806423D55B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A4D30A0-A446-401E-87A6-B806423D55B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8261E07F-9205-4B8B-A3D3-7B6EED069D6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8261E07F-9205-4B8B-A3D3-7B6EED069D6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8261E07F-9205-4B8B-A3D3-7B6EED069D6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8261E07F-9205-4B8B-A3D3-7B6EED069D6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

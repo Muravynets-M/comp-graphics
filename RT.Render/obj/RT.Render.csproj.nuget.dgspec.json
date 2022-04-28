@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Render/RT.Render.csproj": {}
+    "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj": {}
   },
   "projects": {
-    "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/RT.Math.csproj": {
+    "/Users/misha/RiderProjects/comp-graphics/RT.Math/RT.Math.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/RT.Math.csproj",
+        "projectUniqueName": "/Users/misha/RiderProjects/comp-graphics/RT.Math/RT.Math.csproj",
         "projectName": "RT.Math",
-        "projectPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/RT.Math.csproj",
-        "packagesPath": "/Users/m-muravynets/.nuget/packages/",
-        "outputPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/obj/",
+        "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Math/RT.Math.csproj",
+        "packagesPath": "/Users/misha/.nuget/packages/",
+        "outputPath": "/Users/misha/RiderProjects/comp-graphics/RT.Math/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/m-muravynets/.nuget/NuGet/NuGet.Config"
+          "/Users/misha/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -56,17 +56,17 @@
         }
       }
     },
-    "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Render/RT.Render.csproj": {
+    "/Users/misha/RiderProjects/comp-graphics/RT.Primitives/RT.Primitives.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Render/RT.Render.csproj",
-        "projectName": "RT.Render",
-        "projectPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Render/RT.Render.csproj",
-        "packagesPath": "/Users/m-muravynets/.nuget/packages/",
-        "outputPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Render/obj/",
+        "projectUniqueName": "/Users/misha/RiderProjects/comp-graphics/RT.Primitives/RT.Primitives.csproj",
+        "projectName": "RT.Primitives",
+        "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Primitives/RT.Primitives.csproj",
+        "packagesPath": "/Users/misha/.nuget/packages/",
+        "outputPath": "/Users/misha/RiderProjects/comp-graphics/RT.Primitives/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/m-muravynets/.nuget/NuGet/NuGet.Config"
+          "/Users/misha/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -78,8 +78,67 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/RT.Math.csproj": {
-                "projectPath": "/Users/m-muravynets/RiderProjects/dotnet-kpi/comp-graphics/RT.Math/RT.Math.csproj"
+              "/Users/misha/RiderProjects/comp-graphics/RT.Math/RT.Math.csproj": {
+                "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Math/RT.Math.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj",
+        "projectName": "RT.Render",
+        "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj",
+        "packagesPath": "/Users/misha/.nuget/packages/",
+        "outputPath": "/Users/misha/RiderProjects/comp-graphics/RT.Render/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/misha/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/misha/RiderProjects/comp-graphics/RT.Math/RT.Math.csproj": {
+                "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Math/RT.Math.csproj"
+              },
+              "/Users/misha/RiderProjects/comp-graphics/RT.Primitives/RT.Primitives.csproj": {
+                "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Primitives/RT.Primitives.csproj"
               }
             }
           }

@@ -1,23 +1,24 @@
 using System.Drawing;
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Traceable;
+using RT.Primitives.Transform;
 
 namespace RT.Primitives;
 
-public class Sphere : ITraceable
+public class Sphere : ITraceable, ITransform
 {
-    public Point3 Center { get; }
+    public Point3 Origin { get; }
     public float Radius { get; }
 
-    public Sphere(Point3 center, float radius)
+    public Sphere(Point3 origin, float radius)
     {
-        Center = center;
+        Origin = origin;
         Radius = radius;
     }
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {
-        var oc = r.Origin - Center;
+        var oc = r.Origin - Origin;
         var a = Vector3.Dot(r.Direction, r.Direction);
         var b = 2f * Vector3.Dot(oc, r.Direction);
         var c = Vector3.Dot(oc, oc) - Radius * Radius;
@@ -37,6 +38,6 @@ public class Sphere : ITraceable
                 return null;
         }
 
-        return new HitResult((Point3) r.Cast(root), (r.Cast(root) - Center) / Radius, root);
+        return new HitResult((Point3) r.Cast(root), (r.Cast(root) - Origin) / Radius, root);
     }
 }

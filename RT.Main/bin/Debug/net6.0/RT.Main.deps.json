@@ -1,0 +1,63 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "RT.Main/1.0.0": {
+        "dependencies": {
+          "RT.Render": "1.0.0"
+        },
+        "runtime": {
+          "RT.Main.dll": {}
+        }
+      },
+      "RT.Math/1.0.0": {
+        "runtime": {
+          "RT.Math.dll": {}
+        }
+      },
+      "RT.Primitives/1.0.0": {
+        "dependencies": {
+          "RT.Math": "1.0.0"
+        },
+        "runtime": {
+          "RT.Primitives.dll": {}
+        }
+      },
+      "RT.Render/1.0.0": {
+        "dependencies": {
+          "RT.Math": "1.0.0",
+          "RT.Primitives": "1.0.0"
+        },
+        "runtime": {
+          "RT.Render.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RT.Main/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RT.Math/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RT.Primitives/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RT.Render/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Microsoft.VisualBasic.CompilerServices;
 
 namespace RT.Math.LinearAlgebra;
@@ -21,7 +22,7 @@ public struct Vector3
     public static Vector3 operator /(Vector3 v, float f) => v * (1/f);
 
     public static Vector3 operator +(Vector3 v) => v;
-    public static Vector3 operator -(Vector3 v) => new (-v.X, -v.Y, v.Z);
+    public static Vector3 operator -(Vector3 v) => new (-v.X, -v.Y, -v.Z);
 
     public static Vector3 operator +(Vector3 v, Vector3 u) => new(v.X + u.X, v.Y + u.Y, v.Z + u.Z);
     public static Vector3 operator -(Vector3 v, Vector3 u) => v + (-u);
@@ -37,5 +38,11 @@ public struct Vector3
     public static Vector3 Zero() => new (0.0f, 0.0f, 0.0f);
 
     public static float Dot(Vector3 v, Vector3 u) => v.X * u.X + v.Y * u.Y + v.Z * u.Z;
+
+    public static Vector3 Cross(Vector3 v, Vector3 u) => new(
+        v.Y * u.Z - v.Z * u.Y,
+        v.Z * u.X - v.X * u.Z,
+        v.X * u.Y - v.Y * u.X
+    );
     public static Vector3 Unit(Vector3 v) => v / v.Lenght;
 }

@@ -4,17 +4,18 @@ using RT.Math.LinearAlgebra;
 using RT.Primitives;
 using RT.Render;
 using RT.Render.RenderOutput;
+using RT.Render.RenderOutput.HitResultAdapter;
 
 var world = new World();
-world.Place(new Sphere(
+world.Traceables.Add(new Sphere(
     new Point3(0.0f, 0f, -1f),
     0.5f)
 );
 
-world.Light = new Sphere(
-    (Point3)Vector3.Unit(new Vector3(0.5f, 0.5f, 0f)),
+world.Lights.Add(new Sphere(
+    (Point3) Vector3.Unit(new Vector3(0.5f, 0.5f, -0f)),
     0.5f
-);
+));
 
 var camera = new Camera(
     new Point3(0f, 0f, 0f),
@@ -23,8 +24,9 @@ var camera = new Camera(
     2f
 );
 
-var printer = new ConsolePrinter(120, 40);
+var adapter = new AsciiHitResultAdapter(world);
+var buffer = new ConsoleImageBuffer(120, 40);
 
-var renderer = new Renderer(camera, world, printer);
+var renderer = new Renderer(world, buffer, adapter);
 
-renderer.Render();
+renderer.Render(camera);

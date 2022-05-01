@@ -1,11 +1,11 @@
-using RT.Math.LinearAlgebra;
+using System.Xml;
 
 namespace RT.Render.RenderOutput;
 
-public interface IResultBufferPrinter
+public interface IImageBuffer
 {
     public int Width { get; }
     public int Height { get; }
     
-    public void Print(float color);
+    void Write(char[] buffer);
 }

@@ -1,5 +1,7 @@
 using RT.Math.LinearAlgebra;
 using RT.Render.RenderOutput;
+using RT.Render.RenderOutput.HitResultAdapter;
+using RT.Render.RenderOutput.ImageWriter;
 
 namespace RT.Render;
 

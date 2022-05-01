@@ -5,6 +5,7 @@ using RT.Primitives;
 using RT.Render;
 using RT.Render.RenderOutput;
 using RT.Render.RenderOutput.HitResultAdapter;
+using RT.Render.RenderOutput.ImageWriter;
 
 var world = new World();
 world.Traceables.Add(new Sphere(
@@ -13,7 +14,7 @@ world.Traceables.Add(new Sphere(
 );
 
 world.Lights.Add(new Sphere(
-    (Point3) Vector3.Unit(new Vector3(0.5f, 0.5f, -0f)),
+    (Point3) Vector3.Unit(new Vector3(-0.5f, 0.5f, -0f)),
     0.5f
 ));
 
@@ -24,8 +25,11 @@ var camera = new Camera(
     2f
 );
 
-var adapter = new AsciiHitResultAdapter(world);
-var buffer = new ConsoleImageBuffer(120, 40);
+var adapter = new ColorlessPpmHitResultAdapter(world, new Vector3(138 / 255f, 43 / 255f, 226 / 255f),
+    new Vector3(255 / 255f, 192 / 255f, 203 / 255f)
+);
+var buffer = new PpmImageBuffer(600, 600, "sphere");
+//var buffer = new ConsoleImageBuffer(10, 10);
 
 var renderer = new Renderer(world, buffer, adapter);
 

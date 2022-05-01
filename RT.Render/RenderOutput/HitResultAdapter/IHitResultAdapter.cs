@@ -1,6 +1,6 @@
 using RT.Primitives.Traceable;
 
-namespace RT.Render.RenderOutput;
+namespace RT.Render.RenderOutput.HitResultAdapter;
 
 public interface IHitResultAdapter
 {

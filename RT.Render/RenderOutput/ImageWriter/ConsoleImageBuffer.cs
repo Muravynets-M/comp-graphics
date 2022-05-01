@@ -1,4 +1,4 @@
-namespace RT.Render.RenderOutput;
+namespace RT.Render.RenderOutput.ImageWriter;
 
 public class ConsoleImageBuffer: IImageBuffer
 {
@@ -19,7 +19,8 @@ public class ConsoleImageBuffer: IImageBuffer
 
         Console.Write(buffer);
         
-        if (_widthCounter < Width) return;
+        if (_widthCounter < Width)
+            return;
         
         _widthCounter = 0;
         Console.Write('\n');

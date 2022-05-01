@@ -45,4 +45,6 @@ public struct Vector3
         v.X * u.Y - v.Y * u.X
     );
     public static Vector3 Unit(Vector3 v) => v / v.Lenght;
+
+    public static Vector3 Lerp(Vector3 v, Vector3 u, float t) => v * (1f - t) + u * t;
 }

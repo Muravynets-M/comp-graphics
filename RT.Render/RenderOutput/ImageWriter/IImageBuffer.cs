@@ -1,6 +1,4 @@
-using System.Xml;
-
-namespace RT.Render.RenderOutput;
+namespace RT.Render.RenderOutput.ImageWriter;
 
 public interface IImageBuffer
 {

@@ -12,7 +12,12 @@ public struct Point3
         Y = y;
         Z = z;
     }
-    
+
+    public override string ToString()
+    {
+        return "({x}, {y}, {z})";
+    }
+
     public override bool Equals(object? obj)
     {
         if (obj == null)

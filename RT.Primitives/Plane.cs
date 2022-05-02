@@ -29,7 +29,7 @@ public class Plane : ITraceable, ITransform
     {
         if (a.Equals(b) || b.Equals(c) || c.Equals(a))
         {
-            throw new ArgumentException("use 3 different points");
+            throw new ArgumentException("use 3 different points, used {a}, {b}, {c}");
         }
         
         PointA = a;

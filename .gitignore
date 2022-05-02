@@ -4,6 +4,13 @@
 *.DotSettings*
 
 
+*.editorconfig
+*.nuget*
+*rider*
+*.cache
+**\obj
+
+
 # Common IntelliJ Platform excludes
 
 # User specific

@@ -5,43 +5,29 @@ namespace RT.Render;
 
 public class Renderer
 {
-    private readonly Camera _camera;
     private readonly World _world;
-    private readonly IPrinter _printer;
+    private readonly IImageBuffer _imageBuffer;
+    private readonly IHitResultAdapter _hitResultAdapter;
 
-    public Renderer(Camera camera, World world, IPrinter printer)
+    public Renderer(World world, IImageBuffer buffer, IHitResultAdapter hitResultAdapter)
     {
-        _camera = camera;
         _world = world;
-        _printer = printer;
+        _imageBuffer = buffer;
+        _hitResultAdapter = hitResultAdapter;
     }
 
-    public void Render()
+    public void Render(Camera camera)
     {
-        for (var y = 0f; y < _printer.Height; y++)
+        for (var y = 0f; y < _imageBuffer.Height; y++)
         {
-            for (var x = 0f; x < _printer.Width; x++)
+            for (var x = 0f; x < _imageBuffer.Width; x++)
             {
                 
-                var hitResult = _world.Cast(_camera.GetRay(
-                    x / _printer.Width, 
-                    1f - y / _printer.Height));
-
-                var color = 0f;
-                if (hitResult is not null)
-                {
-                    if (_world.Light is not null)
-                    {
-                        color = Vector3.Dot((Vector3) _world.Light.Origin, hitResult.Value.Normal);
-                        color += 0.5f / (color + 1.7f);
-                    }
-                    else
-                    {
-                        color = 1f;
-                    }
-                }
-
-                _printer.Print(color);
+                var hitResult = _world.Cast(camera.GetRay(
+                    x / _imageBuffer.Width, 
+                    1f - y / _imageBuffer.Height));
+                
+                _imageBuffer.Write(_hitResultAdapter.ToChar(hitResult));
             }
         }
     }

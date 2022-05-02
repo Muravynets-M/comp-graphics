@@ -13,6 +13,21 @@ public struct Point3
         Z = z;
     }
     
+    public override bool Equals(object? obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+        
+        if (!(obj is Point3))
+        {
+            return false;
+        }
+        
+        return X == ((Point3)obj).X && Y == ((Point3)obj).Y && Z == ((Point3)obj).Z;
+    }
+    
     public static Point3 operator +(Point3 v) => v;
     public static Point3 operator -(Point3 v) => new (-v.X, -v.Y, -v.Z);
 

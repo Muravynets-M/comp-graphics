@@ -45,4 +45,7 @@ public struct Vector3
         v.X * u.Y - v.Y * u.X
     );
     public static Vector3 Unit(Vector3 v) => v / v.Lenght;
+
+    public static Vector3 FromPoints(Point3 start, Point3 end) =>
+        new (end.X - start.X, end.Y - start.Y, end.Z - start.Z);
 }

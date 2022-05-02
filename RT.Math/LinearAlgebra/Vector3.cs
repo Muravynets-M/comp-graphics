@@ -47,4 +47,7 @@ public struct Vector3
     public static Vector3 Unit(Vector3 v) => v / v.Lenght;
 
     public static Vector3 Lerp(Vector3 v, Vector3 u, float t) => v * (1f - t) + u * t;
+
+    public static Vector3 FromPoints(Point3 start, Point3 end) =>
+        new (end.X - start.X, end.Y - start.Y, end.Z - start.Z);
 }

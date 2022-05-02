@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Main", "RT.Main\RT.Main.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Render.Test", "RT.Render.Test\RT.Render.Test.csproj", "{D454340D-FFDB-4AB3-828E-8639A1224651}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Math.Test", "RT.Math.Test\RT.Math.Test.csproj", "{76B0075F-0A21-4FFF-8559-EFAD075C2BB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{D454340D-FFDB-4AB3-828E-8639A1224651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D454340D-FFDB-4AB3-828E-8639A1224651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D454340D-FFDB-4AB3-828E-8639A1224651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B0075F-0A21-4FFF-8559-EFAD075C2BB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B0075F-0A21-4FFF-8559-EFAD075C2BB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B0075F-0A21-4FFF-8559-EFAD075C2BB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B0075F-0A21-4FFF-8559-EFAD075C2BB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

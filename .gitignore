@@ -8,7 +8,12 @@
 *.nuget*
 *rider*
 *.cache
+*.dll
+*.pdb
 **\obj
+**.dll
+**.pdb
+**.cache
 
 
 # Common IntelliJ Platform excludes

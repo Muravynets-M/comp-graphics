@@ -5,16 +5,14 @@ namespace RT.Render.RenderOutput.HitResultAdapter;
 
 public class ColorlessPpmHitResultAdapter: IHitResultAdapter
 {
-    private readonly World _world;
     private readonly Vector3 _hitColor;
     private readonly Vector3 _backgroundColor;
 
     private static Vector3 White = new Vector3(1f, 1f, 1f);
     private static Vector3 Black = new Vector3(0f, 0f, 0f);
 
-    public ColorlessPpmHitResultAdapter(World world, Vector3 hitColor, Vector3 backgroundColor)
+    public ColorlessPpmHitResultAdapter(Vector3 hitColor, Vector3 backgroundColor)
     {
-        _world = world;
         _hitColor = hitColor;
         _backgroundColor = backgroundColor;
     }
@@ -23,10 +21,12 @@ public class ColorlessPpmHitResultAdapter: IHitResultAdapter
     {
         if (hitResult is null) 
             return ToCharArray(_backgroundColor);
+        if (hitResult.LightSources is null)
+            return ToCharArray(_hitColor);
         
         
-        var lightPercent = System.Math.Clamp(_world.Lights
-            .Select(light => Vector3.Dot((Vector3) light.Origin, hitResult.Value.Normal))
+        var lightPercent = System.Math.Clamp(hitResult.LightSources
+            .Select(light => Vector3.Dot((Vector3) light.Origin, hitResult.Normal))
             .Sum(), -1f, 1f);
 
         if (lightPercent >= 0)

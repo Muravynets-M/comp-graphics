@@ -21,15 +21,15 @@ public class PlaneTests
         var result = _plane.Hit(ray, 0, 100);
         
         Assert.NotNull(result);
-        Assert.Equal(new Point3(1, 0, 0), result!.Value.Point);
+        Assert.Equal(new Point3(1, 0, 0), result!.Point);
         
-        Assert.Equal(577, System.Math.Floor(result!.Value.Normal.X * 1000)); 
-        Assert.Equal(577, System.Math.Floor(result!.Value.Normal.Y * 1000));
-        Assert.Equal(577, System.Math.Floor(result!.Value.Normal.Z * 1000));
+        Assert.Equal(577, System.Math.Floor(result.Normal.X * 1000)); 
+        Assert.Equal(577, System.Math.Floor(result.Normal.Y * 1000));
+        Assert.Equal(577, System.Math.Floor(result.Normal.Z * 1000));
        
-        Assert.Equal(2, result!.Value.T);
+        Assert.Equal(2, result.T);
         
-        Assert.Equal( Vector3.Unit(new Vector3(1, 1, 1)), result!.Value.Normal);
+        Assert.Equal( Vector3.Unit(new Vector3(1, 1, 1)), result.Normal);
     }
 
     [Fact]

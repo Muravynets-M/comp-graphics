@@ -46,8 +46,6 @@ public class TriangleTests
         Assert.Equal(577, System.Math.Floor(result.Value.Normal.Z * 1000));
        
         Assert.Equal(2, result.Value.T);
-        
-        Assert.Equal( Vector3.Unit(new Vector3(1, 1, 1)), result.Value.Normal);
     }
     
     [Fact]

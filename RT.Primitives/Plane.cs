@@ -7,9 +7,9 @@ namespace RT.Primitives;
 public class Plane : ITraceable, ITransform
 {
     public Point3 Origin { get => PointA; }
-    public Point3 PointA { get; }
-    public Point3 PointB { get; }
-    public Point3 PointC { get; }
+    public Point3 PointA { get; private set; }
+    public Point3 PointB { get; private set; }
+    public Point3 PointC { get; private set; }
 
     private Vector3? _normal;
     public Vector3 Normal
@@ -67,5 +67,17 @@ public class Plane : ITraceable, ITransform
         }
 
         return new HitResult((Point3)r.Cast(t), n, t);
+    }
+    
+    public void ApplyTransformation(Matrix4x4 matrix)
+    {
+        if (_normal != null)
+        {
+            _normal = Vector3.Unit((Vector3)(matrix * (Vector4) _normal));
+        }
+
+        PointA = (Point3)(matrix * (Vector4) PointA);
+        PointB = (Point3)(matrix * (Vector4) PointB);
+        PointC = (Point3)(matrix * (Vector4) PointC);
     }
 }

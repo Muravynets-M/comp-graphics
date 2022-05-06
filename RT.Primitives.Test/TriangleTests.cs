@@ -181,4 +181,25 @@ public class TriangleTests
         
         Assert.Null(triangle.Hit(ray, 0, 100));
     }
+    
+    [Fact]
+    public void TestApplyTransformation()
+    {
+        var triangle = new Triangle(new Point3(1, 0, 0), new Point3(0, 1, 0), new Point3(0, 0, 1));
+
+        var t = Matrix4x4.GetTranslationMatrix(1, 2, 3);
+        triangle.ApplyTransformation(t);
+        
+        Assert.Equal(new Point3(2, 2, 3), triangle.Vertex1);
+        Assert.Equal(new Point3(1, 3, 3), triangle.Vertex2);
+        Assert.Equal(new Point3(1, 2, 4), triangle.Vertex3);
+
+        var n = triangle.Normal1;
+        t = Matrix4x4.GetScaleMatrix(1, 2, 3);
+        triangle.ApplyTransformation(t);
+        
+        Assert.NotEqual(n, triangle.Normal1);
+        Assert.NotEqual(n, triangle.Normal2);
+        Assert.NotEqual(n, triangle.Normal3);
+    }
 }

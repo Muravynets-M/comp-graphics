@@ -14,6 +14,7 @@ public class Vector4
         Z = z;
         Scaler = scaler;
     }
-
-    public Vector3 ToVector3() => new (X/Scaler, Y/Scaler, Z/Scaler);
+    
+    public static explicit operator Point3(Vector4 v) => new (v.X/v.Scaler, v.Y/v.Scaler, v.Z/v.Scaler);
+    public static explicit operator Vector3(Vector4 v) => new (v.X/v.Scaler, v.Y/v.Scaler, v.Z/v.Scaler);
 }

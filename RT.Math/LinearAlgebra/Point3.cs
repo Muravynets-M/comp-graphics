@@ -43,4 +43,5 @@ public struct Point3
     public static Vector3 operator -(Point3 v, Vector3 u) => new(v.X - u.X, v.Y - u.Y, v.Z - u.Z);
 
     public static explicit operator Vector3(Point3 p) => new(p.X, p.Y, p.Z);
+    public static explicit operator Vector4(Point3 p) => new(p.X, p.Y, p.Z);
 }

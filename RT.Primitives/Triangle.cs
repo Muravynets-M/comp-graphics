@@ -60,6 +60,14 @@ public class Triangle : ITraceable, ITransform
         return hit;
     }
 
+    public void ApplyTransformation(Matrix4x4 matrix)
+    {
+        plane.ApplyTransformation(matrix);
+        Normal1 = Vector3.Unit((Vector3)(matrix * (Vector4) Normal1));
+        Normal2 = Vector3.Unit((Vector3)(matrix * (Vector4) Normal2));
+        Normal3 = Vector3.Unit((Vector3)(matrix * (Vector4) Normal3));
+    }
+    
     private HitResult? RayIntersectsTriangle(Ray ray)
     {
         // Möller–Trumbore intersection algorithm

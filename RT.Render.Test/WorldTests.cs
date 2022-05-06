@@ -19,6 +19,6 @@ public class WorldTests
 
         var result = world.Cast(new Ray(new Point3(0, 0, 10), -normal));
         Assert.NotNull(result);
-        Assert.Equal(new Point3(0,0,0), result.Value.Point);
+        Assert.Equal(new Point3(0,0,0), result!.Point);
     }
 }

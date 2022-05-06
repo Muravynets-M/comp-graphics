@@ -17,7 +17,7 @@ public class AsciiHitResultAdapter: IHitResultAdapter
         if (hitResult is not null)
         {
             var lightPercent = _world.Lights
-                .Select(light => Vector3.Dot((Vector3) light.Origin, hitResult.Value.Normal))
+                .Select(light => Vector3.Dot((Vector3) light.Origin, hitResult.Normal))
                 .Where(dot => dot > 0)
                 .Sum();
 

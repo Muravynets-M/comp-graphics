@@ -39,19 +39,19 @@ public class TriangleTests
         var result = triangle.Hit(ray, 0, 100);
         
         Assert.NotNull(result);
-        Assert.Equal(new Point3(1, 0, 0), result!.Value.Point);
+        Assert.Equal(new Point3(1, 0, 0), result!.Point);
         
-        Assert.Equal(577, System.Math.Floor(result.Value.Normal.X * 1000)); 
-        Assert.Equal(577, System.Math.Floor(result.Value.Normal.Y * 1000));
-        Assert.Equal(577, System.Math.Floor(result.Value.Normal.Z * 1000));
+        Assert.Equal(577, System.Math.Floor(result.Normal.X * 1000)); 
+        Assert.Equal(577, System.Math.Floor(result.Normal.Y * 1000));
+        Assert.Equal(577, System.Math.Floor(result.Normal.Z * 1000));
        
-        Assert.Equal(2, result.Value.T);
+        Assert.Equal(2, result.T);
     }
     
     [Fact]
     public void TestRayHitNormals()
     {
-        var triangle = Triangle.TriangleWithNormals(
+        var triangle = new Triangle(
             new Point3(0, 0, 0), new Point3(2, 0, 0), new Point3(0, 4, 0),
             new Vector3(0,0,1), new Vector3(1,0,0), new Vector3(0,1,0)
         );
@@ -61,44 +61,44 @@ public class TriangleTests
         var ray = new Ray(o, Vector3.FromPoints(o, new Point3(0, 0, 0)));
         var result = triangle.Hit(ray, 0, 100);
         Assert.NotNull(result);
-        Assert.Equal(new Vector3(0,0,1), result!.Value.Normal);
+        Assert.Equal(new Vector3(0,0,1), result!.Normal);
         
         // vertex 2
         ray = new Ray(o, Vector3.FromPoints(o, new Point3(2, 0, 0)));
         result = triangle.Hit(ray, 0, 100);
         Assert.NotNull(result);
-        Assert.Equal(new Vector3(1,0,0), result!.Value.Normal);
+        Assert.Equal(new Vector3(1,0,0), result!.Normal);
         
         // vertex 3
         ray = new Ray(o, Vector3.FromPoints(o, new Point3(0, 4, 0)));
         result = triangle.Hit(ray, 0, 100);
         Assert.NotNull(result);
-        Assert.Equal(new Vector3(0,1,0), result!.Value.Normal);
+        Assert.Equal(new Vector3(0,1,0), result!.Normal);
         
         // edge middle
         ray = new Ray(o, Vector3.FromPoints(o, new Point3(0, 2, 0)));
         result = triangle.Hit(ray, 0, 100);
         Assert.NotNull(result);
-        Assert.Equal(707, System.Math.Floor(result!.Value.Normal.Z*1000));
+        Assert.Equal(707, System.Math.Floor(result!.Normal.Z*1000));
         
         // edge middle
         ray = new Ray(o, Vector3.FromPoints(o, new Point3(1, 0, 0)));
         result = triangle.Hit(ray, 0, 100);
         Assert.NotNull(result);
-        Assert.Equal(707, System.Math.Floor(result!.Value.Normal.X*1000));
+        Assert.Equal(707, System.Math.Floor(result!.Normal.X*1000));
         
         // edge middle
         ray = new Ray(o, Vector3.FromPoints(o, new Point3(1, 2, 0)));
         result = triangle.Hit(ray, 0, 100);
         Assert.NotNull(result);
-        Assert.Equal(707, System.Math.Floor(result!.Value.Normal.Y*1000));
+        Assert.Equal(707, System.Math.Floor(result!.Normal.Y*1000));
         
         // edge quarter
         ray = new Ray(o, Vector3.FromPoints(o, new Point3(0, 1, 0)));
         result = triangle.Hit(ray, 0, 100);
         Assert.NotNull(result);
-        Assert.Equal(948, System.Math.Floor(result!.Value.Normal.Z*1000));
-        Assert.Equal(316, System.Math.Floor(result!.Value.Normal.Y*1000));
+        Assert.Equal(948, System.Math.Floor(result!.Normal.Z*1000));
+        Assert.Equal(316, System.Math.Floor(result.Normal.Y*1000));
     }
     
     [Fact]

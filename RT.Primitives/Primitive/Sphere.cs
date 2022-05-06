@@ -7,7 +7,7 @@ namespace RT.Primitives;
 
 public class Sphere : ITraceable, ITransform
 {
-    public Point3 Origin { get; }
+    public Point3 Origin { get; private set; }
     public float Radius { get; }
 
     public Sphere(Point3 origin, float radius)
@@ -39,5 +39,10 @@ public class Sphere : ITraceable, ITransform
         }
 
         return new HitResult((Point3) r.Cast(root), (r.Cast(root) - Origin) / Radius, root);
+    }
+    
+    public void ApplyTransformation(Matrix4x4 matrix)
+    {
+        Origin = (Point3) (matrix * (Vector4) Origin);
     }
 }

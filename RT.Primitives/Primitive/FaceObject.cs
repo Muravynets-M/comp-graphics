@@ -24,4 +24,9 @@ public class FaceObject : ITraceable
             .Where(_ => _ != null)
             .MinBy(result => result!.T);
     }
+    
+    public void ApplyTransformation(Matrix4x4 matrix)
+    {
+        _faces.ForEach(f => f.ApplyTransformation(matrix));
+    }
 }

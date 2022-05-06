@@ -38,4 +38,9 @@ public class Camera: ITransform
     {
         return new Ray(Origin, _lowerLeftCorner + _viewportWidth * x + _viewportHeight * y - Origin);
     }
+    
+    public void ApplyTransformation(Matrix4x4 matrix)
+    {
+        
+    }
 }

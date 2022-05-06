@@ -12,9 +12,9 @@ public class Triangle : IFace
 
     public Point3 Vertex3 => Plane.PointC;
 
-    public Vector3 Normal1 { get; }
-    public Vector3 Normal2 { get; }
-    public Vector3 Normal3 { get; }
+    public Vector3 Normal1 { get; private set; }
+    public Vector3 Normal2 { get; private set; }
+    public Vector3 Normal3 { get; private set; }
 
     public Point3 Origin => Plane.Origin;
 
@@ -67,6 +67,14 @@ public class Triangle : IFace
         return hit;
     }
 
+    public void ApplyTransformation(Matrix4x4 matrix)
+    {
+        Plane.ApplyTransformation(matrix);
+        Normal1 = Vector3.Unit((Vector3)(matrix * (Vector4) Normal1));
+        Normal2 = Vector3.Unit((Vector3)(matrix * (Vector4) Normal2));
+        Normal3 = Vector3.Unit((Vector3)(matrix * (Vector4) Normal3));
+    }
+    
     private HitResult? RayIntersectsTriangle(Ray ray)
     {
         // Möller–Trumbore intersection algorithm

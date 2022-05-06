@@ -31,6 +31,7 @@ public struct Vector3
     public static Vector3 operator -(Vector3 v, Point3 p) => v + (-p);
     
     public static explicit operator Point3(Vector3 v) => new (v.X, v.Y, v.Z);
+    public static explicit operator Vector4(Vector3 v) => new (v.X, v.Y, v.Z);
 
     public float Lenght => MathF.Sqrt(LengthSquared);
     public float LengthSquared => X * X + Y * Y + Z * Z;

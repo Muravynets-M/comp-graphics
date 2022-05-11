@@ -11,11 +11,11 @@ public class InMemorySetup : IRenderInput
          return new List<ITraceable>
         {
             // new Sphere(
-            // new Point3(0.0f, 0f, -1f),
+            // new Point3(-0.5f, 0.5f, -0f),
             // 0.5f
             // ),
             new Sphere(
-                (Point3) Vector3.Unit(new Vector3(-0.5f, 0.5f, -0f)),
+                new Point3(-5f, 5f, -7f),
                 0.5f
             )
         };

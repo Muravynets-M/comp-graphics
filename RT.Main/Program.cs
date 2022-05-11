@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RT.Main;
 using RT.Math;
@@ -8,7 +10,12 @@ using RT.Render.Render;
 using RT.Render.RenderInput;
 using RT.Render.RenderInput.InMemorySetup;
 
-var provider = RenderSetUp.SetUpDi();
+IConfiguration config = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json")
+    .AddEnvironmentVariables()
+    .Build();
+
+var provider = RenderSetUp.SetUpDi(config);
 var world = RenderSetUp.SetUpWorld();
 var camera = RenderSetUp.SetUpCamera();
 
@@ -23,7 +30,7 @@ var pi = (float) System.Math.PI;
 world.Traceables[0].ApplyTransformation(new TransformationBuilder()
      .WithScaling(1.25f, 1, 1)
      .WithRotation(0f, pi/3, 0f)
-     .WithTranslation(0f, 0.5f, 0f)
+     .WithTranslation(0f, 0.2f, 0f)
      .Build()
 );
 

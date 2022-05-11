@@ -51,3 +51,14 @@ D:/studing/sem6/comp_graphics/RT.Main/obj/Debug/net6.0/ref/RT.Main.dll
 /Users/misha/RiderProjects/comp-graphics/RT.Main/obj/Debug/net6.0/RT.Main.genruntimeconfig.cache
 /Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.Configuration.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Binder.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Json.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Physical.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.FileSystemGlobbing.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/appsettings.json

@@ -21,7 +21,6 @@ public class ObjParser: IObjParser
         
         while (line is not null)
         {
-            Console.WriteLine(line);
             _objLineParsers.ForEach(_ => _.ParseLine(Regex.Split(line, @"\s+")));
             
             line = content.ReadLine();

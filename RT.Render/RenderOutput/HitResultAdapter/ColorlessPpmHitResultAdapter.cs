@@ -21,27 +21,16 @@ public class ColorlessPpmHitResultAdapter: IHitResultAdapter
     {
         if (hitResult is null) 
             return ToCharArray(_backgroundColor);
-        if (hitResult.LightSources is null)
-            return ToCharArray(_hitColor);
-        
-        
+        if (!hitResult.LightSources.Any())
+            return ToCharArray(Black);
+
         var lightPercent = System.Math.Clamp(hitResult.LightSources
-            .Select(light => Vector3.Dot((Vector3) light.Origin, hitResult.Normal))
-            .Sum(), -1f, 1f);
+            .Select(light => 
+                System.Math.Abs(Vector3.Dot(Vector3.Unit((Vector3) light.Origin), hitResult.Normal))).Sum(), 0f, 1f);
+     
+        var color =  Vector3.Lerp(_hitColor, White, lightPercent);
 
-        if (lightPercent >= 0)
-        {
-            var color =  Vector3.Lerp(_hitColor, White, lightPercent);
-
-            return ToCharArray(color);
-        }
-        else
-        {
-            var color =  Vector3.Lerp(_hitColor, Black, System.Math.Abs(lightPercent));
-
-            return ToCharArray(color);
-        }
-
+        return ToCharArray(color);
     }
 
     private static char[] ToCharArray(Vector3 color)

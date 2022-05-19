@@ -52,19 +52,7 @@ public class Triangle : IFace
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {
-        var hit = RayIntersectsTriangle(r);
-        if (hit == null)
-        {
-            return null;
-        }
-
-        var t = hit.T;
-        if (t < minT || t > maxT)
-        {
-            return null;
-        }
-
-        return hit;
+        return RayIntersectsTriangle(r, minT, maxT);
     }
 
     public void ApplyTransformation(Matrix4x4 matrix)
@@ -75,7 +63,7 @@ public class Triangle : IFace
         Normal3 = Vector3.Unit((Vector3)(matrix * (Vector4) Normal3));
     }
     
-    private HitResult? RayIntersectsTriangle(Ray ray)
+    private HitResult? RayIntersectsTriangle(Ray ray, float minT, float maxT)
     {
         // Möller–Trumbore intersection algorithm
         const float epsilon = 0.0000001f;
@@ -126,6 +114,12 @@ public class Triangle : IFace
             return null;
         }
 
+        // used here to remove unnecessary computations below
+        if (t < minT || t > maxT)
+        {
+            return null;
+        }
+        
         // b1*n1 + b2*n2 + b3*n3 normal interpolation
         var n = Vector3.Unit(Normal1 * (1 - u - v) + Normal2 * u + Normal3 * v);
 

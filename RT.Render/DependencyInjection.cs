@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RT.Math.LinearAlgebra;
 using RT.Render.Render;
@@ -12,13 +13,35 @@ namespace RT.Render;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddRenderer(this IServiceCollection services)
+    public static IServiceCollection AddRenderer(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddSingleton<IImageBuffer>(_ => new PpmImageBuffer(600, 600, "renderOutput"));
-        services.AddSingleton<IHitResultAdapter>(_ => new ColorlessPpmHitResultAdapter(
-            new Vector3(138 / 255f, 43 / 255f, 226 / 255f),
-            new Vector3(255 / 255f, 192 / 255f, 203 / 255f)
-        ));
+        var renderOutput = configuration["RenderOutput"];
+        switch (renderOutput)
+        {
+            case "Ppm":
+            {
+                var width = int.Parse(configuration[$"{renderOutput}:Width"]);
+                var height = int.Parse(configuration[$"{renderOutput}:Height"]);
+                services.AddSingleton<IImageBuffer>(_ =>
+                    new PpmImageBuffer(width, height, configuration[$"{renderOutput}:FileName"]));
+                services.AddSingleton<IHitResultAdapter>(_ => new ColorlessPpmHitResultAdapter(
+                    new Vector3(138 / 255f, 43 / 255f, 226 / 255f),
+                    new Vector3(255 / 255f, 192 / 255f, 203 / 255f)
+                ));
+                break;
+            }
+            case "Console":
+            {
+                var width = int.Parse(configuration[$"{renderOutput}:Width"]);
+                var height = int.Parse(configuration[$"{renderOutput}:Height"]);
+                services.AddSingleton<IImageBuffer>(_ => new ConsoleImageBuffer(width, height));
+                services.AddSingleton<IHitResultAdapter>(_ => new AsciiHitResultAdapter());
+                break;
+            }
+            default:
+                throw new InvalidDataException();
+        }
+
 
         services.AddSingleton<IRenderInput>(_ => new ObjRenderInput(
             "renderInput", _.GetService<IObjParser>()!
@@ -27,7 +50,7 @@ public static class DependencyInjection
         {
             var objFileContent = new ObjFileContent();
             return new ObjParser(
-                objFileContent, 
+                objFileContent,
                 new FaceLineParser(objFileContent),
                 new VertexLineParser(objFileContent),
                 new NormalLineParser(objFileContent),

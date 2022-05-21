@@ -17,8 +17,8 @@ public class ObjRenderInput: IRenderInput
     
     public IEnumerable<ITraceable> GetWorldInput()
     {
-        using var streamReader = new StreamReader($"../../../{_fileName}.obj");
+        using var streamReader = new StreamReader($"../../../{_fileName}");
         
-        return _objParser.Parse(streamReader);
+        return _objParser.Parse(streamReader).SelectMany(_ => _.Faces);
     }
 }

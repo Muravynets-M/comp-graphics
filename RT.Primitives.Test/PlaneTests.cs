@@ -1,4 +1,5 @@
 ﻿using RT.Math.LinearAlgebra;
+using RT.Primitives.Primitive;
 using Xunit;
 
 namespace RT.Primitives.Test;

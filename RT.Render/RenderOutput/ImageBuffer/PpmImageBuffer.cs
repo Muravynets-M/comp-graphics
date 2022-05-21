@@ -21,8 +21,25 @@ public class PpmImageBuffer: IImageBuffer, IDisposable
         _file.WriteLine(buffer);
     }
 
+    bool disposed;
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!disposed)
+        {
+            if (disposing)
+            {
+                _file.Flush();
+                _file.Close();
+            }
+        }
+        //dispose unmanaged resources
+        disposed = true;
+    }
+
     public void Dispose()
     {
-        _file.Close();
+        Dispose(true);
+        GC.SuppressFinalize(this);
     }
 }

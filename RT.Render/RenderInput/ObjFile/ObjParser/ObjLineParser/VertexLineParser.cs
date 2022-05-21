@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace RT.Render.RenderInput.ObjFile.ObjParser.ObjLineParser;
 
 public class VertexLineParser: IObjLineParser
@@ -15,6 +17,10 @@ public class VertexLineParser: IObjLineParser
             return;
         
         
-        _objFileContent.AddVertex(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3]));
+        _objFileContent.AddVertex(
+            float.Parse(line[1], CultureInfo.InvariantCulture),
+            float.Parse(line[2], CultureInfo.InvariantCulture),
+            float.Parse(line[3], CultureInfo.InvariantCulture)
+        );
     }
 }

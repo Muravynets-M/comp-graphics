@@ -47,7 +47,7 @@ public class Renderer: Render.IRenderer
         {
             var direction = light.Origin - hitResult.Point;
             
-            // // // // the figure is shadowed by itself
+            // the figure is shadowed by itself
             // if (Vector3.Dot(direction, hitResult.Normal) <= 0)
             // {
             //     list.Add(light);

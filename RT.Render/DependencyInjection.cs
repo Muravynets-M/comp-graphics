@@ -8,6 +8,7 @@ using RT.Render.RenderInput.ObjFile.ObjParser;
 using RT.Render.RenderInput.ObjFile.ObjParser.ObjLineParser;
 using RT.Render.RenderOutput.HitResultAdapter;
 using RT.Render.RenderOutput.ImageBuffer;
+using RT.Render.WorldTransformAlgorithm;
 
 namespace RT.Render;
 
@@ -16,12 +17,12 @@ public static class DependencyInjection
     public static IServiceCollection AddRenderer(this IServiceCollection services, IConfiguration configuration)
     {
         var renderOutput = configuration["RenderOutput"];
+        var width = int.Parse(configuration[$"{renderOutput}:Width"]);
+        var height = int.Parse(configuration[$"{renderOutput}:Height"]);
         switch (renderOutput)
         {
             case "Ppm":
             {
-                var width = int.Parse(configuration[$"{renderOutput}:Width"]);
-                var height = int.Parse(configuration[$"{renderOutput}:Height"]);
                 services.AddSingleton<IImageBuffer>(_ =>
                     new PpmImageBuffer(width, height, configuration[$"{renderOutput}:FileName"]));
                 services.AddSingleton<IHitResultAdapter>(_ => new ColorlessPpmHitResultAdapter(
@@ -32,8 +33,6 @@ public static class DependencyInjection
             }
             case "Console":
             {
-                var width = int.Parse(configuration[$"{renderOutput}:Width"]);
-                var height = int.Parse(configuration[$"{renderOutput}:Height"]);
                 services.AddSingleton<IImageBuffer>(_ => new ConsoleImageBuffer(width, height));
                 services.AddSingleton<IHitResultAdapter>(_ => new AsciiHitResultAdapter());
                 break;
@@ -42,9 +41,13 @@ public static class DependencyInjection
                 throw new InvalidDataException();
         }
 
+        services.AddSingleton(_ => new ImageBufferFactory(renderOutput,
+            width, height));
+        services.AddSingleton<IWorldTransformAlgorithm, StubWorldTransformAlgorithm>();
+
 
         services.AddSingleton<IRenderInput>(_ => new ObjRenderInput(
-            "renderInput", _.GetService<IObjParser>()!
+            configuration["RenderInput"], _.GetService<IObjParser>()!
         ));
         services.AddSingleton<IObjParser>(_ =>
         {
@@ -57,7 +60,11 @@ public static class DependencyInjection
                 new ObjectLineParser(objFileContent)
             );
         });
-        services.AddSingleton<IRenderer, Renderer>();
+        services.AddSingleton<IRenderer>(_ => new InfiniteRenderer(
+            _.GetService<ImageBufferFactory>()!, 
+            _.GetService<IHitResultAdapter>()!,
+            new IWorldTransformAlgorithm[]{new SingleBoxWorldTransformAlgorithm()}
+        ));
 
         return services;
     }

@@ -1,5 +1,6 @@
 ﻿using RT.Math.LinearAlgebra;
 using RT.Primitives;
+using RT.Primitives.Primitive;
 using RT.Primitives.Traceable;
 
 namespace RT.Render.RenderInput.InMemorySetup;

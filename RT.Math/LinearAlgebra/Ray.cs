@@ -8,7 +8,7 @@ public struct Ray
     public Ray(Point3 origin, Vector3 direction)
     {
         Origin = origin;
-        Direction = direction;
+        Direction = Vector3.Unit(direction);
     }
 
     public Vector3 Cast(float t)

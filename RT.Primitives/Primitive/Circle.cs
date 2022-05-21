@@ -1,10 +1,9 @@
-﻿using System.Numerics;
-using RT.Math.LinearAlgebra;
+﻿using RT.Math.LinearAlgebra;
 using RT.Primitives.Traceable;
 using Matrix4x4 = RT.Math.LinearAlgebra.Matrix4x4;
 using Vector3 = RT.Math.LinearAlgebra.Vector3;
 
-namespace RT.Primitives;
+namespace RT.Primitives.Primitive;
 
 public class Circle : ITraceable
 {
@@ -17,7 +16,14 @@ public class Circle : ITraceable
         Radius = radius;
         plane = Plane.PlaneFromNormal(normal, center);
     }
-    
+
+    public float MinX => Origin.X - Radius;
+    public float MinY => Origin.Y - Radius;
+    public float MinZ => Origin.Z - Radius;
+    public float MaxX => Origin.X + Radius;
+    public float MaxY => Origin.Y + Radius;
+    public float MaxZ => Origin.Z + Radius;
+
     public HitResult? Hit(Ray r, float minT, float maxT)
     {
         var hit = plane.Hit(r, minT, maxT);

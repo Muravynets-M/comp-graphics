@@ -1,9 +1,8 @@
-using System.Drawing;
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
 
-namespace RT.Primitives;
+namespace RT.Primitives.Primitive;
 
 public class Sphere : ITraceable, ITransform
 {
@@ -15,6 +14,13 @@ public class Sphere : ITraceable, ITransform
         Origin = origin;
         Radius = radius;
     }
+
+    public float MinX => Origin.X - Radius;
+    public float MinY => Origin.Y - Radius;
+    public float MinZ => Origin.Z - Radius;
+    public float MaxX => Origin.X + Radius;
+    public float MaxY => Origin.Y + Radius;
+    public float MaxZ => Origin.Z + Radius;
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {

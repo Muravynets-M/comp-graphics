@@ -6,12 +6,12 @@ using RT.Render.RenderOutput.ImageBuffer;
 
 namespace RT.Render.Render;
 
-public class Renderer: Render.IRenderer
+public class SingularRenderer: IRenderer
 {
     private readonly IImageBuffer _imageBuffer;
     private readonly IHitResultAdapter _hitResultAdapter;
 
-    public Renderer(IImageBuffer buffer, IHitResultAdapter hitResultAdapter)
+    public SingularRenderer(IImageBuffer buffer, IHitResultAdapter hitResultAdapter)
     {
         _imageBuffer = buffer;
         _hitResultAdapter = hitResultAdapter;
@@ -31,8 +31,8 @@ public class Renderer: Render.IRenderer
                 if (hitResult is not null)
                 {
                     hitResult.LightSources = world.Lights;
-
-                    ProcessShades(world, hitResult);
+                
+                    //ProcessShades(world, hitResult);
                 }
 
                 _imageBuffer.Write(_hitResultAdapter.ToChar(hitResult));

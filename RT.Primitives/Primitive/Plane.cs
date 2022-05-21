@@ -2,7 +2,7 @@
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
 
-namespace RT.Primitives;
+namespace RT.Primitives.Primitive;
 
 public class Plane : ITraceable, ITransform
 {
@@ -43,6 +43,14 @@ public class Plane : ITraceable, ITransform
         p._normal = normal;
         return p;
     }
+
+    public float MinX => -22;
+    public float MinY => -22;
+    public float MinZ => -22;
+    public float MaxX => float.PositiveInfinity;
+    public float MaxY => float.PositiveInfinity;
+    public float MaxZ => float.PositiveInfinity;
+
     public HitResult? Hit(Ray r, float minT, float maxT)
     {
         var d = r.Direction;

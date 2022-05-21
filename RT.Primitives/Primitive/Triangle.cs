@@ -1,8 +1,7 @@
 ﻿using RT.Math.LinearAlgebra;
 using RT.Primitives.Traceable;
-using RT.Primitives.Transform;
 
-namespace RT.Primitives;
+namespace RT.Primitives.Primitive;
 
 public class Triangle : IFace
 {
@@ -49,6 +48,13 @@ public class Triangle : IFace
         Normal2 = normal2;
         Normal3 = normal3;
     }
+
+    public float MinX => MathF.Min(MathF.Min(Vertex1.X, Vertex2.X), Vertex3.X);
+    public float MinY => MathF.Min(MathF.Min(Vertex1.Y, Vertex2.Y), Vertex3.Y);
+    public float MinZ => MathF.Min(MathF.Min(Vertex1.Z, Vertex2.Z), Vertex3.Z);
+    public float MaxX => MathF.Max(MathF.Max(Vertex1.X, Vertex2.X), Vertex3.X);
+    public float MaxY => MathF.Max(MathF.Max(Vertex1.Y, Vertex2.Y), Vertex3.Y);
+    public float MaxZ => MathF.Max(MathF.Max(Vertex1.Z, Vertex2.Z), Vertex3.Z);
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {

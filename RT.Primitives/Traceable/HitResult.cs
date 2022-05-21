@@ -15,5 +15,6 @@ public class HitResult
         Point = point;
         Normal = normal;
         T = t;
+        LightSources = new List<ITransform>();
     }
 }

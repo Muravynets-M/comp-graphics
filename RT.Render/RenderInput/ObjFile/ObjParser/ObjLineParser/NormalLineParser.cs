@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace RT.Render.RenderInput.ObjFile.ObjParser.ObjLineParser;
 
 public class NormalLineParser: IObjLineParser
@@ -14,6 +16,10 @@ public class NormalLineParser: IObjLineParser
         if (line.Length == 0 || line[0] != "vn")
             return;
         
-        _objFileContent.AddNormal(float.Parse(line[1]), float.Parse(line[2]), float.Parse(line[3]));
+        _objFileContent.AddNormal(
+            float.Parse(line[1], CultureInfo.InvariantCulture),
+            float.Parse(line[2], CultureInfo.InvariantCulture),
+            float.Parse(line[3], CultureInfo.InvariantCulture)
+        );
     }
 }

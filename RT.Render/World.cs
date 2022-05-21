@@ -20,4 +20,18 @@ public class World
             .Select(traceable => traceable.Hit(ray, minT, maxT))
             .MinBy(hitResult => hitResult?.T);
     }
+    
+    public HitResult? CastOnFirstObstacle(Ray ray, float maxT, float minT = float.Epsilon)
+    {
+        foreach (var traceable in Traceables)
+        {
+            var hit = traceable.Hit(ray, minT, maxT);
+            if (hit != null)
+            {
+                return hit;
+            }
+        }
+
+        return null;
+    }
 }

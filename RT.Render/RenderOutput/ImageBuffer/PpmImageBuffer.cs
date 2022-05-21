@@ -2,8 +2,8 @@ namespace RT.Render.RenderOutput.ImageBuffer;
 
 public class PpmImageBuffer: IImageBuffer, IDisposable
 {
-    private StreamWriter _file;
-    private int _widthCounter;
+    private readonly StreamWriter _file;
+    // private int _widthCounter;
     
     public PpmImageBuffer(int width, int height, string fileName)
     {

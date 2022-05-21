@@ -23,7 +23,7 @@ public static class RenderSetUp
     public static Camera SetUpCamera()
     {
         return new Camera(
-            new Point3(0.5f, 0.5f, 0.5f),
+            new Point3(0.7f, 0.7f, 0.7f),
             new Vector3(0f, 0f, 0f),
             2f,
             2f

@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RT.Main;
 using RT.Math;
+using RT.Math.LinearAlgebra;
 using RT.Render.Render;
 using RT.Render.RenderInput;
 using RT.Render.RenderInput.InMemorySetup;
@@ -24,6 +25,9 @@ world.Lights.AddRange(new InMemorySetup().GetWorldInput());
 
 world.Traceables.AddRange(input.GetWorldInput());
 
+// world.Traceables.ForEach(_ =>
+//     _.ApplyTransformation(Matrix4x4.GetScaleMatrix(2f, 1f, 1f))
+// );
 var pi = (float) System.Math.PI;
 
 renderer.Render(world, camera);

@@ -32,7 +32,7 @@ public class SingularRenderer: IRenderer
                 {
                     hitResult.LightSources = world.Lights;
                 
-                    //ProcessShades(world, hitResult);
+                    ProcessShades(world, hitResult);
                 }
 
                 _imageBuffer.Write(_hitResultAdapter.ToChar(hitResult));

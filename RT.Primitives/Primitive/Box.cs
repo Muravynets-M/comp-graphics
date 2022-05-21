@@ -139,7 +139,7 @@ public class Box : ITraceable
         if (System.Math.Abs(minRect.X - maxRect.X) < 0.0001f)
         {
             return FloatBetween(minRect.Y, maxRect.Y, planeHitPoint.Y) &&
-                   FloatBetween(minRect.Y, maxRect.Y, planeHitPoint.Y);
+                   FloatBetween(minRect.Z, maxRect.Z, planeHitPoint.Z);
         }
 
         if (System.Math.Abs(minRect.Y - maxRect.Y) < 0.0001f)

@@ -44,4 +44,18 @@ public struct Point3
 
     public static explicit operator Vector3(Point3 p) => new(p.X, p.Y, p.Z);
     public static explicit operator Vector4(Point3 p) => new(p.X, p.Y, p.Z);
+    
+    // A(x1) ---------m------------ P(x?) ----n--- B(x2)   AP : PB = m : n
+    public static Point3 DivideSegmentMtoN(Point3 a, Point3 b, float m, float n)
+    {
+        return new Point3(
+            DivideSegmentMtoN(a.X, b.X, m, n),
+            DivideSegmentMtoN(a.Y, b.Y, m, n),
+            DivideSegmentMtoN(a.Z, b.Z, m, n)
+        );
+    }
+    private static float DivideSegmentMtoN(float a, float b, float m, float n)
+    {
+        return (m * b + n * a) / (m + n);
+    }
 }

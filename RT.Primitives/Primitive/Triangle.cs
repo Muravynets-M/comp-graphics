@@ -1,4 +1,5 @@
-﻿using RT.Math.LinearAlgebra;
+﻿using System.Net.NetworkInformation;
+using RT.Math.LinearAlgebra;
 using RT.Primitives.Traceable;
 
 namespace RT.Primitives.Primitive;
@@ -15,7 +16,18 @@ public class Triangle : IFace
     public Vector3 Normal2 { get; private set; }
     public Vector3 Normal3 { get; private set; }
 
-    public Point3 Origin => Plane.Origin;
+    public Point3 Origin
+    {
+        get
+        {
+            // points of median to each edge
+            var edgeMiddle = Point3.DivideSegmentMtoN(Vertex2, Vertex3, 1, 1);
+            
+            // each median should be divided 2:1 medianPoint -> vertex
+            // centroid (centre of mass)
+            return Point3.DivideSegmentMtoN(Vertex1, edgeMiddle, 2, 1);
+        }
+    }
 
     private Plane Plane { get; }
 

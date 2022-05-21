@@ -11,10 +11,6 @@ public class InMemorySetup : IRenderInput
     {
          return new List<ITraceable>
         {
-            // new Sphere(
-            // new Point3(-0.5f, 0.5f, -0f),
-            // 0.5f
-            // ),
             new Sphere(
                 new Point3(-5f, 5f, -7f),
                 0.5f

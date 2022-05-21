@@ -48,11 +48,11 @@ public class SingularRenderer: IRenderer
             var direction = light.Origin - hitResult.Point;
             
             // the figure is shadowed by itself
-            // if (Vector3.Dot(direction, hitResult.Normal) <= 0)
-            // {
-            //     list.Add(light);
-            //     continue;
-            // }
+            if (Vector3.Dot(direction, hitResult.Normal) <= 0)
+            {
+                list.Add(light);
+                continue;
+            }
             
             // to remove the possibility of ray hitting the same figure
             var start = (Point3) (hitResult.Point + hitResult.Normal * 0.000001f);

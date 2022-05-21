@@ -2,6 +2,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RT.Math.LinearAlgebra;
 using RT.Primitives;
+using RT.Primitives.Primitive;
+using RT.Primitives.Transform;
 using RT.Render;
 
 namespace RT.Main;
@@ -28,5 +30,16 @@ public static class RenderSetUp
             2f,
             2f
         );
+    }
+
+    public static void SetUpLights(World world)
+    {
+        world.Lights = new List<ITransform>
+        {
+            new Sphere(
+                new Point3(-5f, 5f, -7f),
+                0.5f
+            )
+        };
     }
 }

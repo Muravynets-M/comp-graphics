@@ -17,11 +17,10 @@ IConfiguration config = new ConfigurationBuilder()
 var provider = RenderSetUp.SetUpDi(config);
 var world = RenderSetUp.SetUpWorld();
 var camera = RenderSetUp.SetUpCamera();
+RenderSetUp.SetUpLights(world);
 
 var renderer = provider.GetService<IRenderer>()!;
 var input = provider.GetService<IRenderInput>()!;
-
-world.Lights.AddRange(new InMemorySetup().GetWorldInput());
 
 world.Traceables.AddRange(input.GetWorldInput());
 

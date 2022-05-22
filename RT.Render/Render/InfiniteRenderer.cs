@@ -36,7 +36,7 @@ public class InfiniteRenderer : IRenderer
 
             watch.Stop();
 
-            Console.WriteLine($"Algorithm \"{worldAlgorithm}\" took {watch.Elapsed.Minutes} minutes {watch.Elapsed.Seconds} seconds");
+            Console.WriteLine($"Algorithm \"{worldAlgorithm}\" took {watch.Elapsed.Minutes} minutes {watch.Elapsed.Seconds} seconds {watch.Elapsed.Milliseconds} milliseconds");
         }
     }
 }

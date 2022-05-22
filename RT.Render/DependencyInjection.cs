@@ -63,8 +63,14 @@ public static class DependencyInjection
         services.AddSingleton<IRenderer>(_ => new InfiniteRenderer(
             _.GetService<ImageBufferFactory>()!, 
             _.GetService<IHitResultAdapter>()!,
-            new IWorldTransformAlgorithm[]{new StubWorldTransformAlgorithm(), new SingleBoxWorldTransformAlgorithm()}
+            new IWorldTransformAlgorithm[]
+            {
+                // new SingleBoxWorldTransformAlgorithm(),
+                new DoubleBoxWorldTransformAlgorithm(),
+                new TopDownWorldTransform(20),
+            }
         ));
+        // new StubWorldTransformAlgorithm(), 
 
         return services;
     }

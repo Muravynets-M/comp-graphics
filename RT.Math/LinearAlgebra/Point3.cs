@@ -54,7 +54,7 @@ public struct Point3
             DivideSegmentMtoN(a.Z, b.Z, m, n)
         );
     }
-    private static float DivideSegmentMtoN(float a, float b, float m, float n)
+    public static float DivideSegmentMtoN(float a, float b, float m, float n)
     {
         return (m * b + n * a) / (m + n);
     }

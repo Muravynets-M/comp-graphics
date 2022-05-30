@@ -1,20 +1,19 @@
 using System.Diagnostics;
-using RT.Render.RenderOutput.HitResultAdapter;
-using RT.Render.RenderOutput.ImageBuffer;
+using RT.Render.RenderOutput;
 using RT.Render.WorldTransformAlgorithm;
 
 namespace RT.Render.Render;
 
 public class InfiniteRenderer : IRenderer
 {
-    private readonly ImageBufferFactory _bufferFactory;
+    private readonly IImageBufferFactory _bufferFactory;
     private readonly IHitResultAdapter _hitResultAdapter;
-    private readonly IWorldTransformAlgorithm[] _worldAlgorithms;
+    private readonly IWorldTransformAlgorithmFactory _worldAlgorithms;
 
     public InfiniteRenderer(
-        ImageBufferFactory bufferFactory,
+        IImageBufferFactory bufferFactory,
         IHitResultAdapter hitResultAdapter,
-        params IWorldTransformAlgorithm[] worldAlgorithms
+        IWorldTransformAlgorithmFactory worldAlgorithms
     )
     {
         _bufferFactory = bufferFactory;
@@ -24,7 +23,7 @@ public class InfiniteRenderer : IRenderer
 
     public void Render(World world, Camera camera)
     {
-        foreach (var worldAlgorithm in _worldAlgorithms)
+        foreach (var worldAlgorithm in _worldAlgorithms.WorldTransformAlgorithms)
         {
             var renderer = new SingularRenderer(_bufferFactory.BuildImageBuffer(worldAlgorithm.ToString()!),
                 _hitResultAdapter);

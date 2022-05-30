@@ -12,7 +12,10 @@
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "6.0.1",
           "Microsoft.Extensions.Configuration.Json": "6.0.0",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "RT.Render": "1.0.0"
+          "RT.Render": "1.0.0",
+          "RT.RenderInput": "1.0.0",
+          "RT.RenderOutput": "1.0.0",
+          "RT.WorldTransform": "1.0.0"
         },
         "runtime": {
           "RT.Main.dll": {}
@@ -932,6 +935,32 @@
         "runtime": {
           "RT.Render.dll": {}
         }
+      },
+      "RT.RenderInput/1.0.0": {
+        "dependencies": {
+          "RT.Render": "1.0.0"
+        },
+        "runtime": {
+          "RT.RenderInput.dll": {}
+        }
+      },
+      "RT.RenderOutput/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "RT.Render": "1.0.0"
+        },
+        "runtime": {
+          "RT.RenderOutput.dll": {}
+        }
+      },
+      "RT.WorldTransform/1.0.0": {
+        "dependencies": {
+          "RT.Render": "1.0.0"
+        },
+        "runtime": {
+          "RT.WorldTransform.dll": {}
+        }
       }
     }
   },
@@ -1603,6 +1632,21 @@
       "sha512": ""
     },
     "RT.Render/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RT.RenderInput/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RT.RenderOutput/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RT.WorldTransform/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

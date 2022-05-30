@@ -54,7 +54,7 @@ public class Box : ITraceable
     private bool IsBoxHit(Ray r)
     {
         // Y planes
-        if (Vector3.Dot(r.Direction, Vector3.Up) < 0f && r.Origin.Y > MaxY)
+        
         {
             var minRect = new Point3(MinX, MaxY, MinZ);
             var maxRect = new Point3(MaxX, MaxY, MaxZ);
@@ -65,7 +65,7 @@ public class Box : ITraceable
                 return true;
             }
         }
-        else if (r.Origin.Y < MinY)
+        
         {
             var minRect = new Point3(MinX, MinY, MinZ);
             var maxRect = new Point3(MaxX, MinY, MaxZ);
@@ -77,8 +77,7 @@ public class Box : ITraceable
             }
         }
 
-        // X planes
-        if (Vector3.Dot(r.Direction, Vector3.Right) < 0f && r.Origin.X > MaxX)
+        
         {
             var minRect = new Point3(MaxX, MinY, MinZ);
             var maxRect = new Point3(MaxX, MaxY, MaxZ);
@@ -89,7 +88,7 @@ public class Box : ITraceable
                 return true;
             }
         }
-        else if (r.Origin.X < MinX)
+        
         {
             var minRect = new Point3(MinX, MinY, MinZ);
             var maxRect = new Point3(MinX, MaxY, MaxZ);
@@ -101,8 +100,7 @@ public class Box : ITraceable
             }
         }
 
-        // Z planes
-        if (Vector3.Dot(r.Direction, Vector3.Forward) < 0f && r.Origin.Z > MaxZ)
+        
         {
             var minRect = new Point3(MinX, MinY, MaxZ);
             var maxRect = new Point3(MaxX, MaxY, MaxZ);
@@ -113,7 +111,7 @@ public class Box : ITraceable
                 return true;
             }
         }
-        else if (r.Origin.Z < MinZ)
+       
         {
             var minRect = new Point3(MinX, MinY, MinZ);
             var maxRect = new Point3(MaxX, MaxY, MinZ);

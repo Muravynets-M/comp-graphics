@@ -1,12 +1,11 @@
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
-using RT.Render.RenderOutput.HitResultAdapter;
-using RT.Render.RenderOutput.ImageBuffer;
+using RT.Render.RenderOutput;
 
 namespace RT.Render.Render;
 
-public class SingularRenderer: IRenderer
+public class SingularRenderer : IRenderer
 {
     private readonly IImageBuffer _imageBuffer;
     private readonly IHitResultAdapter _hitResultAdapter;
@@ -23,15 +22,12 @@ public class SingularRenderer: IRenderer
         {
             for (var x = 0f; x < _imageBuffer.Width; x++)
             {
-                
                 var hitResult = world.Cast(camera.GetRay(
-                    x / _imageBuffer.Width, 
+                    x / _imageBuffer.Width,
                     1f - y / _imageBuffer.Height));
-                
+
                 if (hitResult is not null)
                 {
-                    hitResult.LightSources = world.Lights;
-                
                     ProcessShades(world, hitResult);
                 }
 
@@ -43,26 +39,34 @@ public class SingularRenderer: IRenderer
     private void ProcessShades(World world, HitResult hitResult)
     {
         var list = new List<ITransform>();
-        foreach (var light in hitResult.LightSources)
+        foreach (var light in world.Lights)
         {
             var direction = light.Origin - hitResult.Point;
-            
+
             // the figure is shadowed by itself
             if (Vector3.Dot(direction, hitResult.Normal) <= 0)
             {
-                list.Add(light);
                 continue;
             }
-            
+
             // to remove the possibility of ray hitting the same figure
-            var start = (Point3) (hitResult.Point + hitResult.Normal * 0.000001f);
+            var start = (Point3) (hitResult.Point + hitResult.Normal * 0.00001f);
             var ray = new Ray(start, direction);
-            
-            var hitResultLight = world.CastOnFirstObstacle(ray, hitResult.T);
-            if (hitResultLight is not null)
+
+            var hitResultLight = world.CastOnFirstObstacle(ray, float.PositiveInfinity);
+            if (hitResultLight is null)
                 list.Add(light);
         }
         
-        hitResult.LightSources = hitResult.LightSources.Where(light => !list.Contains(light));
+        if (!list.Any())
+            return;
+
+        hitResult.LightDotProduct = System.Math.Clamp(
+            list.Aggregate(
+                0f, (f, light) =>
+                    f + Vector3.Dot(Vector3.Unit((Vector3) light.Origin), hitResult.Normal)),
+            0f,
+            1f
+        );
     }
 }

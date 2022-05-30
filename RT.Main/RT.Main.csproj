@@ -8,7 +8,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\RT.RenderInput\RT.RenderInput.csproj" />
+      <ProjectReference Include="..\RT.RenderOutput\RT.RenderOutput.csproj" />
       <ProjectReference Include="..\RT.Render\RT.Render.csproj" />
+      <ProjectReference Include="..\RT.WorldTransform\RT.WorldTransform.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -23,6 +26,10 @@
       <Content Include="appsettings.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Output" />
     </ItemGroup>
 
 </Project>

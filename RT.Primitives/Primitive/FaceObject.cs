@@ -1,4 +1,5 @@
 using RT.Math.LinearAlgebra;
+using RT.Primitives.Face;
 using RT.Primitives.Traceable;
 
 namespace RT.Primitives.Primitive;

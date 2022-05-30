@@ -1,0 +1,46 @@
+using RT.Render.RenderOutput;
+
+namespace RT.RenderOutput.ImageBuffer;
+
+public class PpmImageBuffer: IImageBuffer, IDisposable
+{
+    private readonly StreamWriter _file;
+
+    public PpmImageBuffer(int width, int height, string fileName)
+    {
+        Width = width;
+        Height = height;
+        _file = new StreamWriter($"../../../Output/{fileName}.ppm");
+        _file.AutoFlush = true;
+        _file.Write($"P3\n {Width} {Height} \n255\n");
+    }
+
+    public int Width { get; }
+    public int Height { get; }
+    public void Write(char[] buffer)
+    {
+        _file.WriteLine(buffer);
+    }
+
+    bool disposed;
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!disposed)
+        {
+            if (disposing)
+            {
+                _file.Flush();
+                _file.Close();
+            }
+        }
+        //dispose unmanaged resources
+        disposed = true;
+    }
+
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+}

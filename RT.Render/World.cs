@@ -16,9 +16,22 @@ public class World
 
     public HitResult? Cast(Ray ray, float minT = float.Epsilon, float maxT = float.PositiveInfinity)
     {
-        return Traceables
-            .Select(traceable => traceable.Hit(ray, minT, maxT))
-            .MinBy(hitResult => hitResult?.T);
+        var minHitResult = (HitResult)null;
+        
+        foreach (var traceable in Traceables)
+        {
+            var hitResult = traceable.Hit(ray, minT, maxT);
+
+            if (hitResult is null) 
+                continue;
+            
+            if (minHitResult is null)
+                minHitResult = hitResult;
+            else if (hitResult.T < minHitResult.T)
+                minHitResult = hitResult;
+        }
+
+        return minHitResult;
     }
     
     public HitResult? CastOnFirstObstacle(Ray ray, float maxT, float minT = float.Epsilon)

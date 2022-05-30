@@ -62,3 +62,9 @@ D:/studing/sem6/comp_graphics/RT.Main/obj/Debug/net6.0/ref/RT.Main.dll
 /Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.FileSystemGlobbing.dll
 /Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
 /Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/appsettings.json
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.RenderInput.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.RenderOutput.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.WorldTransform.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.RenderInput.pdb
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.RenderOutput.pdb
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.WorldTransform.pdb

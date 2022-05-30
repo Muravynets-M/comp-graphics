@@ -1526,6 +1526,47 @@
         "runtime": {
           "bin/placeholder/RT.Render.dll": {}
         }
+      },
+      "RT.RenderInput/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RT.Render": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RT.RenderInput.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.RenderInput.dll": {}
+        }
+      },
+      "RT.RenderOutput/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "RT.Render": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RT.RenderOutput.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.RenderOutput.dll": {}
+        }
+      },
+      "RT.WorldTransform/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RT.Render": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RT.WorldTransform.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.WorldTransform.dll": {}
+        }
       }
     }
   },
@@ -5299,6 +5340,21 @@
       "type": "project",
       "path": "../RT.Render/RT.Render.csproj",
       "msbuildProject": "../RT.Render/RT.Render.csproj"
+    },
+    "RT.RenderInput/1.0.0": {
+      "type": "project",
+      "path": "../RT.RenderInput/RT.RenderInput.csproj",
+      "msbuildProject": "../RT.RenderInput/RT.RenderInput.csproj"
+    },
+    "RT.RenderOutput/1.0.0": {
+      "type": "project",
+      "path": "../RT.RenderOutput/RT.RenderOutput.csproj",
+      "msbuildProject": "../RT.RenderOutput/RT.RenderOutput.csproj"
+    },
+    "RT.WorldTransform/1.0.0": {
+      "type": "project",
+      "path": "../RT.WorldTransform/RT.WorldTransform.csproj",
+      "msbuildProject": "../RT.WorldTransform/RT.WorldTransform.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5307,7 +5363,10 @@
       "Microsoft.Extensions.Configuration.EnvironmentVariables >= 6.0.1",
       "Microsoft.Extensions.Configuration.Json >= 6.0.0",
       "Microsoft.Extensions.DependencyInjection >= 6.0.0",
-      "RT.Render >= 1.0.0"
+      "RT.Render >= 1.0.0",
+      "RT.RenderInput >= 1.0.0",
+      "RT.RenderOutput >= 1.0.0",
+      "RT.WorldTransform >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5337,6 +5396,15 @@
           "projectReferences": {
             "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj": {
               "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj"
+            },
+            "/Users/misha/RiderProjects/comp-graphics/RT.RenderInput/RT.RenderInput.csproj": {
+              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.RenderInput/RT.RenderInput.csproj"
+            },
+            "/Users/misha/RiderProjects/comp-graphics/RT.RenderOutput/RT.RenderOutput.csproj": {
+              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.RenderOutput/RT.RenderOutput.csproj"
+            },
+            "/Users/misha/RiderProjects/comp-graphics/RT.WorldTransform/RT.WorldTransform.csproj": {
+              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.WorldTransform/RT.WorldTransform.csproj"
             }
           }
         }

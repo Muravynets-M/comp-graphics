@@ -20,9 +20,8 @@ public static class DependencyInjection
             {
                 services.AddSingleton<IImageBuffer>(_ =>
                     new PpmImageBuffer(width, height, configuration[$"Output:{renderOutput}:FileName"]));
-                services.AddSingleton<IHitResultAdapter>(_ => new ColorlessPpmHitResultAdapter(
-                    new Vector3(138 / 255f, 43 / 255f, 226 / 255f),
-                    new Vector3(255 / 255f, 192 / 255f, 203 / 255f)
+                services.AddSingleton<IHitResultAdapter>(_ => new MaterialPpmColorResultAdapter(
+                    new Vector3(0 / 255f, 191 / 255f, 255 / 255f)
                 ));
                 break;
             }

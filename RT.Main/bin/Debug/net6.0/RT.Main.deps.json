@@ -907,6 +907,14 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "RT.Material/1.0.0": {
+        "dependencies": {
+          "RT.Primitives": "1.0.0"
+        },
+        "runtime": {
+          "RT.Material.dll": {}
+        }
+      },
       "RT.Math/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0"
@@ -938,6 +946,7 @@
       },
       "RT.RenderInput/1.0.0": {
         "dependencies": {
+          "RT.Material": "1.0.0",
           "RT.Render": "1.0.0"
         },
         "runtime": {
@@ -1620,6 +1629,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "RT.Material/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "RT.Math/1.0.0": {
       "type": "project",

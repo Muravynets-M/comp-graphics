@@ -39,10 +39,10 @@ public static class RenderSetUp
     public static Camera SetUpCamera()
     {
         return new Camera(
-            new Point3(-1.5f, 1.5f, -1.5f),
+            new Point3(-2f, 1.2f, -1f),
             new Vector3(0f, 0f, 0f),
-            2f,
-            2f
+            16f / 6f,
+            9f / 6f
         );
     }
 

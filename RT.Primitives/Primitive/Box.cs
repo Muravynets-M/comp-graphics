@@ -1,4 +1,5 @@
 using RT.Math.LinearAlgebra;
+using RT.Primitives.Material;
 using RT.Primitives.Traceable;
 
 namespace RT.Primitives.Primitive;
@@ -37,6 +38,8 @@ public class Box : ITraceable
     public float MaxX => _maxVertex.X;
     public float MaxY => _maxVertex.Y;
     public float MaxZ => _maxVertex.Z;
+    
+    public IMaterial? Material { get; set; }
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {

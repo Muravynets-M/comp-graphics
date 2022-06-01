@@ -1483,6 +1483,19 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "RT.Material/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RT.Primitives": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RT.Material.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.Material.dll": {}
+        }
+      },
       "RT.Math/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1531,6 +1544,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "RT.Material": "1.0.0",
           "RT.Render": "1.0.0"
         },
         "compile": {
@@ -5325,6 +5339,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "RT.Material/1.0.0": {
+      "type": "project",
+      "path": "../RT.Material/RT.Material.csproj",
+      "msbuildProject": "../RT.Material/RT.Material.csproj"
     },
     "RT.Math/1.0.0": {
       "type": "project",

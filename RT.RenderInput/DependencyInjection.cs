@@ -28,7 +28,8 @@ public static class DependencyInjection
                         new FaceLineParser(objFileContent),
                         new VertexLineParser(objFileContent),
                         new NormalLineParser(objFileContent),
-                        new ObjectLineParser(objFileContent)
+                        new ObjectLineParser(objFileContent),
+                        new MaterialLineParser(objFileContent)
                     );
                 });
                 break;

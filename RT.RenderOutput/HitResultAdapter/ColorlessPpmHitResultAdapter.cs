@@ -4,7 +4,7 @@ using RT.Render.RenderOutput;
 
 namespace RT.RenderOutput.HitResultAdapter;
 
-public class ColorlessPpmHitResultAdapter: IHitResultAdapter
+public class ColorlessPpmHitResultAdapter : IHitResultAdapter
 {
     private readonly Vector3 _hitColor;
     private readonly Vector3 _backgroundColor;
@@ -18,16 +18,14 @@ public class ColorlessPpmHitResultAdapter: IHitResultAdapter
         _backgroundColor = backgroundColor;
     }
 
-    public char[] ToChar(HitResult? hitResult)
+    public char[] ToChar(ColorResult? hitResult)
     {
-        if (hitResult is null) 
+        if (hitResult is null)
             return ToCharArray(_backgroundColor);
-        if (hitResult.LightDotProduct is null)
-            return ToCharArray(Black);
 
-        var color =  Vector3.Lerp(_hitColor, White, hitResult.LightDotProduct.Value);
-
-        return ToCharArray(color);
+        return ToCharArray(hitResult.LightDotProduct >= 0f
+            ? Vector3.Lerp(_hitColor, White, 0.7f*hitResult.LightDotProduct)
+            : Vector3.Lerp(_hitColor, Black, -hitResult.LightDotProduct));
     }
 
     private static char[] ToCharArray(Vector3 color)

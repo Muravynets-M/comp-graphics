@@ -1,5 +1,6 @@
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Face;
+using RT.Primitives.Material;
 using RT.Primitives.Traceable;
 
 namespace RT.Primitives.Primitive;
@@ -10,7 +11,16 @@ public class FaceObject : ITraceable
 
     public FaceObject(List<IFace> faces, string name)
     {
+        faces.ForEach(_ => _.FaceObject = this);
         Name = name;
+        Faces = faces;
+    }
+
+    public FaceObject(List<IFace> faces, string name, IMaterial? material)
+    {
+        faces.ForEach(_ => _.FaceObject = this);
+        Name = name;
+        Material = material;
         Faces = faces;
     }
 
@@ -24,6 +34,8 @@ public class FaceObject : ITraceable
     public float MaxX => Faces.MaxBy(_ => _.MaxX)!.MaxX;
     public float MaxY => Faces.MaxBy(_ => _.MaxY)!.MaxY;
     public float MaxZ => Faces.MaxBy(_ => _.MaxZ)!.MaxZ;
+    
+    public IMaterial? Material { get; set; }
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {

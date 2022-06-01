@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.RenderOutput", "RT.Rende
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.WorldTransform", "RT.WorldTransform\RT.WorldTransform.csproj", "{F07F0BC1-BED4-4C37-9205-541DF24F3F34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RT.Material", "RT.Material\RT.Material.csproj", "{9C24BDEF-31A0-4CB4-9EA8-9AA40010DD44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +68,9 @@ Global
 		{F07F0BC1-BED4-4C37-9205-541DF24F3F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F07F0BC1-BED4-4C37-9205-541DF24F3F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F07F0BC1-BED4-4C37-9205-541DF24F3F34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C24BDEF-31A0-4CB4-9EA8-9AA40010DD44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C24BDEF-31A0-4CB4-9EA8-9AA40010DD44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C24BDEF-31A0-4CB4-9EA8-9AA40010DD44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C24BDEF-31A0-4CB4-9EA8-9AA40010DD44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,5 @@
 ﻿using RT.Math.LinearAlgebra;
+using RT.Primitives.Material;
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
 
@@ -50,6 +51,8 @@ public class Plane : ITraceable, ITransform
     public float MaxX => float.PositiveInfinity;
     public float MaxY => float.PositiveInfinity;
     public float MaxZ => float.PositiveInfinity;
+    
+    public IMaterial? Material { get; set; }
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {

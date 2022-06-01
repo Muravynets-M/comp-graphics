@@ -1,4 +1,5 @@
 ﻿using RT.Math.LinearAlgebra;
+using RT.Primitives.Material;
 using RT.Primitives.Traceable;
 using Matrix4x4 = RT.Math.LinearAlgebra.Matrix4x4;
 using Vector3 = RT.Math.LinearAlgebra.Vector3;
@@ -23,6 +24,8 @@ public class Circle : ITraceable
     public float MaxX => Origin.X + Radius;
     public float MaxY => Origin.Y + Radius;
     public float MaxZ => Origin.Z + Radius;
+    
+    public IMaterial? Material { get; set; }
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {

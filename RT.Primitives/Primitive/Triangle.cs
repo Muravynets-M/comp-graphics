@@ -1,6 +1,7 @@
 ﻿using System.Net.NetworkInformation;
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Face;
+using RT.Primitives.Material;
 using RT.Primitives.Traceable;
 
 namespace RT.Primitives.Primitive;
@@ -68,6 +69,8 @@ public class Triangle : IFace
     public float MaxX => MathF.Max(MathF.Max(Vertex1.X, Vertex2.X), Vertex3.X);
     public float MaxY => MathF.Max(MathF.Max(Vertex1.Y, Vertex2.Y), Vertex3.Y);
     public float MaxZ => MathF.Max(MathF.Max(Vertex1.Z, Vertex2.Z), Vertex3.Z);
+
+    public IMaterial? Material => FaceObject.Material;
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {
@@ -145,7 +148,7 @@ public class Triangle : IFace
         // ray intersection
         var p = (Point3) ray.Cast(t);
 
-        return new HitResult(p, n, t);
+        return (Material is not null) ? new HitResult(p, n, t, Material) : new HitResult(p, n, t) ;
     }
 
     // private HitResult? RayIntersectsTriangleCulling(Ray ray)
@@ -208,4 +211,6 @@ public class Triangle : IFace
                && (edge1 + edge3 > edge2)
                && (edge2 + edge3 > edge1);
     }
+
+    public FaceObject FaceObject { get; set; }
 }

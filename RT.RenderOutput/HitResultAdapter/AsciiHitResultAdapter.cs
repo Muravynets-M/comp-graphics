@@ -6,7 +6,7 @@ namespace RT.RenderOutput.HitResultAdapter;
 
 public class AsciiHitResultAdapter: IHitResultAdapter
 {
-    public char[] ToChar(HitResult? hitResult)
+    public char[] ToChar(ColorResult? hitResult)
     {
         if (hitResult?.LightDotProduct is null) 
             return new[] {' '};

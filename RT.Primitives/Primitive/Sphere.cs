@@ -1,4 +1,5 @@
 using RT.Math.LinearAlgebra;
+using RT.Primitives.Material;
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
 
@@ -21,6 +22,8 @@ public class Sphere : ITraceable, ITransform
     public float MaxX => Origin.X + Radius;
     public float MaxY => Origin.Y + Radius;
     public float MaxZ => Origin.Z + Radius;
+    
+    public IMaterial? Material { get; set; }
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {
@@ -44,7 +47,15 @@ public class Sphere : ITraceable, ITransform
                 return null;
         }
 
-        return new HitResult((Point3) r.Cast(root), (r.Cast(root) - Origin) / Radius, root);
+        var pointVec = r.Cast(root);
+        var point = (Point3)(pointVec + (pointVec - Origin) * 0.00001f);
+
+        if (Material is not null)
+        {
+            return new HitResult(point, (r.Cast(root) - Origin) / Radius, root, Material);
+        }
+
+        return new HitResult(point, (r.Cast(root) - Origin) / Radius, root);
     }
     
     public void ApplyTransformation(Matrix4x4 matrix)

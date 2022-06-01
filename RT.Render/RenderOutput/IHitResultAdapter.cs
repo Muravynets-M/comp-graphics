@@ -4,5 +4,5 @@ namespace RT.Render.RenderOutput;
 
 public interface IHitResultAdapter
 {
-    char[] ToChar(HitResult? hitResult);
+    char[] ToChar(ColorResult? hitResult);
 }

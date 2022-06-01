@@ -68,3 +68,5 @@ D:/studing/sem6/comp_graphics/RT.Main/obj/Debug/net6.0/ref/RT.Main.dll
 /Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.RenderInput.pdb
 /Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.RenderOutput.pdb
 /Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.WorldTransform.pdb
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.Material.dll
+/Users/misha/RiderProjects/comp-graphics/RT.Main/bin/Debug/net6.0/RT.Material.pdb

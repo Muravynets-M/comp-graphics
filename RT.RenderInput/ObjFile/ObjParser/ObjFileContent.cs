@@ -1,6 +1,6 @@
 using RT.Math.LinearAlgebra;
-using RT.Primitives;
 using RT.Primitives.Face;
+using RT.Primitives.Material;
 using RT.Primitives.Primitive;
 
 namespace RT.RenderInput.ObjFile.ObjParser;
@@ -13,6 +13,7 @@ public class ObjFileContent
     private readonly List<Point3> _vertices = new();
 
     private string? _currentFaceObject;
+    private IMaterial? _currentMaterial;
 
     public IEnumerable<FaceObject> FaceObjects
     {
@@ -45,6 +46,11 @@ public class ObjFileContent
         _faces.Add(FaceFactory.Build(faceVertices, faceNormals));
     }
 
+    public void AddMaterial(IMaterial material)
+    {
+        _currentMaterial = material;
+    }
+
     public void AddFaceObject(string name)
     {
         if (_currentFaceObject is not null)
@@ -56,7 +62,7 @@ public class ObjFileContent
     private void BuildFaceObject()
     {
         _currentFaceObject ??= "unnamed";
-        _faceObjects.Add(new FaceObject(new List<IFace>(_faces), _currentFaceObject));
+        _faceObjects.Add(new FaceObject(new List<IFace>(_faces), _currentFaceObject, _currentMaterial));
 
         _faces.Clear();
     }

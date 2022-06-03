@@ -1,6 +1,8 @@
+using RT.Light;
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
+using RT.Primitives.Light;
 
 namespace RT.Render;
 
@@ -10,7 +12,7 @@ public class World: ITraceableCollection
     public static Vector3 Right = new(1.0f, 0.0f, 0.0f);
     public static Vector3 Forward = new(0.0f, 1.0f, -1.0f);
 
-    public List<ITransform> Lights { get; set; } = new List<ITransform>();
+    public List<ILight> Lights { get; set; } = new List<ILight>();
 
     public List<ITraceable> Traceables { get; set; } = new List<ITraceable>();
 

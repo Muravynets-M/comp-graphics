@@ -1,3 +1,5 @@
+using RT.Light;
+using RT.Primitives.Light;
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
 using RT.Render;
@@ -11,7 +13,7 @@ public class StubWorldTransformAlgorithm: IWorldTransformAlgorithm
     {
         return new World()
         {
-            Lights = new List<ITransform>(world.Lights),
+            Lights = new List<ILight>(world.Lights),
             Traceables = new List<ITraceable>(world.Traceables)
         };
     }

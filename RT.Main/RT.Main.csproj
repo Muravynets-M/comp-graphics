@@ -26,9 +26,11 @@
       <Content Include="appsettings.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <None Remove="single_box.ppm" />
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Input" />
       <Folder Include="Output" />
     </ItemGroup>
 

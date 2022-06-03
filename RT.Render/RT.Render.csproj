@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\RT.Light\RT.Light.csproj" />
       <ProjectReference Include="..\RT.Math\RT.Math.csproj" />
       <ProjectReference Include="..\RT.Primitives\RT.Primitives.csproj" />
     </ItemGroup>

@@ -1483,6 +1483,20 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "RT.Light/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RT.Math": "1.0.0",
+          "RT.Primitives": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RT.Light.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.Light.dll": {}
+        }
+      },
       "RT.Material/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1530,6 +1544,7 @@
           "Blurhash.System.Drawing.Common": "2.2.0",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "RT.Light": "1.0.0",
           "RT.Math": "1.0.0",
           "RT.Primitives": "1.0.0"
         },
@@ -5340,6 +5355,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "RT.Light/1.0.0": {
+      "type": "project",
+      "path": "../RT.Light/RT.Light.csproj",
+      "msbuildProject": "../RT.Light/RT.Light.csproj"
+    },
     "RT.Material/1.0.0": {
       "type": "project",
       "path": "../RT.Material/RT.Material.csproj",
@@ -5389,19 +5409,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/misha/.nuget/packages/": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/misha/RiderProjects/comp-graphics/RT.Main/RT.Main.csproj",
+      "projectUniqueName": "D:\\studing\\sem6\\comp_graphics\\RT.Main\\RT.Main.csproj",
       "projectName": "RT.Main",
-      "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Main/RT.Main.csproj",
-      "packagesPath": "/Users/misha/.nuget/packages/",
-      "outputPath": "/Users/misha/RiderProjects/comp-graphics/RT.Main/obj/",
+      "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.Main\\RT.Main.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "D:\\studing\\sem6\\comp_graphics\\RT.Main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/misha/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -5413,17 +5433,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj": {
-              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj"
+            "D:\\studing\\sem6\\comp_graphics\\RT.RenderInput\\RT.RenderInput.csproj": {
+              "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.RenderInput\\RT.RenderInput.csproj"
             },
-            "/Users/misha/RiderProjects/comp-graphics/RT.RenderInput/RT.RenderInput.csproj": {
-              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.RenderInput/RT.RenderInput.csproj"
+            "D:\\studing\\sem6\\comp_graphics\\RT.RenderOutput\\RT.RenderOutput.csproj": {
+              "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.RenderOutput\\RT.RenderOutput.csproj"
             },
-            "/Users/misha/RiderProjects/comp-graphics/RT.RenderOutput/RT.RenderOutput.csproj": {
-              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.RenderOutput/RT.RenderOutput.csproj"
+            "D:\\studing\\sem6\\comp_graphics\\RT.Render\\RT.Render.csproj": {
+              "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.Render\\RT.Render.csproj"
             },
-            "/Users/misha/RiderProjects/comp-graphics/RT.WorldTransform/RT.WorldTransform.csproj": {
-              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.WorldTransform/RT.WorldTransform.csproj"
+            "D:\\studing\\sem6\\comp_graphics\\RT.WorldTransform\\RT.WorldTransform.csproj": {
+              "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.WorldTransform\\RT.WorldTransform.csproj"
             }
           }
         }
@@ -5470,7 +5490,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

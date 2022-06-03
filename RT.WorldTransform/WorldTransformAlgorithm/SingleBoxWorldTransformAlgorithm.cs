@@ -1,3 +1,4 @@
+using RT.Primitives.Light;
 using RT.Primitives.Primitive;
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
@@ -12,7 +13,7 @@ public class SingleBoxWorldTransformAlgorithm: IWorldTransformAlgorithm
     {
         return new World()
         {
-            Lights = new List<ITransform>(world.Lights),
+            Lights = new List<ILight>(world.Lights),
             Traceables = new List<ITraceable>(){new Box(world.Traceables)}
         };
     }

@@ -15,7 +15,7 @@ public class Circle : ITraceable
     public Circle(Vector3 normal, float radius, Point3 center)
     {
         Radius = radius;
-        plane = Plane.PlaneFromNormal(normal, center);
+        plane = new Plane(normal, center);
     }
 
     public float MinX => Origin.X - Radius;

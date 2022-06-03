@@ -39,7 +39,7 @@ public class PlaneTests
         var o = new Point3(5, 0, 0);
         var ray = new Ray(o, Vector3.FromPoints(o, new Point3(3, 0, 0)));
 
-        var result = _plane.Hit(ray, 0, 5);
+        Assert.Null(_plane.Hit(ray, 0, 1));
     }
     
     [Fact]

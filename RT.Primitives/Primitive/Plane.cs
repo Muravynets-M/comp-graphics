@@ -44,13 +44,20 @@ public class Plane : ITraceable, ITransform
         p._normal = normal;
         return p;
     }
+    public Plane(Vector3 normal, Point3 origin)
+    {
+        _normal = Vector3.Unit(normal);
+        PointA = origin;
+        // PointB = new Point3(0, 1, 0);
+        // PointC = new Point3(0, 0, 1);
+    }
 
-    public float MinX => -22;
-    public float MinY => -22;
-    public float MinZ => -22;
-    public float MaxX => float.PositiveInfinity;
-    public float MaxY => float.PositiveInfinity;
-    public float MaxZ => float.PositiveInfinity;
+    public float MinX => float.MinValue;
+    public float MinY => float.MinValue;
+    public float MinZ => float.MinValue;
+    public float MaxX => float.MaxValue;
+    public float MaxY => float.MaxValue;
+    public float MaxZ => float.MaxValue;
     
     public IMaterial? Material { get; set; }
 
@@ -60,13 +67,14 @@ public class Plane : ITraceable, ITransform
         var o = r.Origin;
         var c = Origin;
         var n = Normal;
-        
-        if (Vector3.Dot(d , n) == 0)
+
+        var dn = Vector3.Dot(d, n);
+        if (dn == 0)
         {
             return null;
         }
 
-        var t = Vector3.Dot(c - o,  n) / Vector3.Dot(d, n);
+        var t = Vector3.Dot(c - o,  n) / dn;
         if (t <= 0)
         {
             return null;
@@ -77,7 +85,7 @@ public class Plane : ITraceable, ITransform
             return null;
         }
 
-        return new HitResult((Point3)r.Cast(t), n, t);
+        return (Material is not null) ? new HitResult((Point3)r.Cast(t), n, t, Material) : new HitResult((Point3)r.Cast(t), n, t);
     }
     
     public void ApplyTransformation(Matrix4x4 matrix)

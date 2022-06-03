@@ -13,7 +13,7 @@ public static class DependencyInjection
         services.AddSingleton<IWorldTransformAlgorithmFactory>(_ => new WorldTransformAlgorithmFactory(
             new IWorldTransformAlgorithm[]
             {
-                new TopDownWorldTransform(30),
+                new WorldTransformPlaneDecorator(new TopDownWorldTransform(30))
             }
         ));
 

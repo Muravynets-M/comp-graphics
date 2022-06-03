@@ -1,4 +1,5 @@
-﻿using RT.Math.LinearAlgebra;
+﻿using System;
+using RT.Math.LinearAlgebra;
 using RT.Primitives.Primitive;
 using Xunit;
 
@@ -46,7 +47,7 @@ public class TriangleTests
         Assert.Equal(577, System.Math.Floor(result.Normal.Y * 1000));
         Assert.Equal(577, System.Math.Floor(result.Normal.Z * 1000));
        
-        Assert.Equal(2, result.T);
+        Assert.Equal(4, result.T);
     }
     
     [Fact]
@@ -74,7 +75,10 @@ public class TriangleTests
         ray = new Ray(o, Vector3.FromPoints(o, new Point3(0, 4, 0)));
         result = triangle.Hit(ray, 0, 100);
         Assert.NotNull(result);
-        Assert.Equal(new Vector3(0,1,0), result!.Normal);
+        
+        Assert.True(MathF.Abs(result!.Normal.X - 0) < 0.00001);
+        Assert.True(MathF.Abs(result!.Normal.Y - 1) < 0.00001);
+        Assert.True(MathF.Abs(result!.Normal.Z - 0) < 0.00001);
         
         // edge middle
         ray = new Ray(o, Vector3.FromPoints(o, new Point3(0, 2, 0)));

@@ -28,7 +28,7 @@ public class PlaneTests
         Assert.Equal(577, System.Math.Floor(result.Normal.Y * 1000));
         Assert.Equal(577, System.Math.Floor(result.Normal.Z * 1000));
        
-        Assert.Equal(2, result.T);
+        Assert.Equal(4, result.T);
         
         Assert.Equal( Vector3.Unit(new Vector3(1, 1, 1)), result.Normal);
     }

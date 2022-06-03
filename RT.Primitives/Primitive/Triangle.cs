@@ -70,7 +70,7 @@ public class Triangle : IFace
     public float MaxY => MathF.Max(MathF.Max(Vertex1.Y, Vertex2.Y), Vertex3.Y);
     public float MaxZ => MathF.Max(MathF.Max(Vertex1.Z, Vertex2.Z), Vertex3.Z);
 
-    public IMaterial? Material => FaceObject.Material;
+    public IMaterial? Material => FaceObject?.Material;
 
     public HitResult? Hit(Ray r, float minT, float maxT)
     {

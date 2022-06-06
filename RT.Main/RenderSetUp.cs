@@ -51,7 +51,7 @@ public static class RenderSetUp
     {
         world.Lights = new List<Primitives.Light.ILight>
         {
-            // new PointLight(new Point3(-5f, 5f, -7f), new ColorRGB(1, 1, 1), 0.95f),
+            new PointLight(new Point3(-5f, 5f, -7f), new ColorRGB(1, 1, 1), 0.99f),
             // new DirectionalLight(new Vector3(-0.3f, 1.0f, -1.0f), new ColorRGB(1, 1, 1), 0.8f),
             // new DirectionalLight(-(World.Up+World.Forward), new ColorRGB(1, 1, 1), 0.8f),
             // new EnvironmentalLight(new ColorRGB(1, 1, 1), 0.6f)

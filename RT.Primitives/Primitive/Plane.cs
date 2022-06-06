@@ -2,6 +2,7 @@
 using RT.Primitives.Material;
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
+using RT.Texture;
 
 namespace RT.Primitives.Primitive;
 
@@ -85,7 +86,30 @@ public class Plane : ITraceable, ITransform
             return null;
         }
 
-        return (Material is not null) ? new HitResult((Point3)r.Cast(t), n, t, Material) : new HitResult((Point3)r.Cast(t), n, t);
+        var p = (Point3) r.Cast(t);
+
+        return (Material is not null) ? new HitResult(p, n, t, Material, GetUV(p)) : new HitResult(p, n, t);
+    }
+
+    private UVcoordinates GetUV(Point3 p)
+    {
+        var a = Vector3.Cross(Normal, Vector3.Up);
+        var b = Vector3.Cross(Normal, Vector3.Forward);
+        
+        var max_ab = Vector3.Dot(a, a) < Vector3.Dot(b, b) ? b : a;
+        
+        var c = Vector3.Cross(Normal, Vector3.Right);
+        
+        var texDir = Vector3.Unit(Vector3.Dot(max_ab, max_ab) < Vector3.Dot(c, c) ? c : max_ab);
+        
+        
+        var u = texDir;
+        var v = Vector3.Cross(Normal, u);
+        
+        return new UVcoordinates(
+            Vector3.Dot(u, (Vector3) p),
+            Vector3.Dot(v, (Vector3) p)
+        );
     }
     
     public void ApplyTransformation(Matrix4x4 matrix)

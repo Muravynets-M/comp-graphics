@@ -1,6 +1,7 @@
 using System.Drawing;
 using RT.Material;
 using RT.Math.LinearAlgebra;
+using RT.Texture.Color;
 
 namespace RT.RenderInput.ObjFile.ObjParser.ObjLineParser;
 
@@ -23,24 +24,26 @@ public class MaterialLineParser : IObjLineParser
             case "lambert":
             {
                 var color = ColorTranslator.FromHtml(line[2]);
-                _objFileContent.AddMaterial(new LambertMaterial(new Vector3(
+                _objFileContent.AddMaterial(new LambertMaterial(
+                    new OneColorTexture(new Vector3(
                         color.R / 255f,
                         color.G / 255f,
                         color.B / 255f
                     )
-                ));
+                )));
                 
                 break;
             }
             case "mirror":
             {
                 var color = ColorTranslator.FromHtml(line[2]);
-                _objFileContent.AddMaterial(new MirrorMaterial(new Vector3(
+                _objFileContent.AddMaterial(new MirrorMaterial(
+                    new OneColorTexture(new Vector3(
                         color.R / 255f,
                         color.G / 255f,
                         color.B / 255f
                     )
-                ));
+                )));
                 
                 break;
             }

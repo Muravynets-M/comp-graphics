@@ -1528,7 +1528,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "RT.Math": "1.0.0"
+          "RT.Math": "1.0.0",
+          "RT.Texture": "1.0.0"
         },
         "compile": {
           "bin/placeholder/RT.Primitives.dll": {}
@@ -1582,6 +1583,19 @@
         },
         "runtime": {
           "bin/placeholder/RT.RenderOutput.dll": {}
+        }
+      },
+      "RT.Texture/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "RT.Math": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RT.Texture.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RT.Texture.dll": {}
         }
       },
       "RT.WorldTransform/1.0.0": {
@@ -5389,6 +5403,11 @@
       "type": "project",
       "path": "../RT.RenderOutput/RT.RenderOutput.csproj",
       "msbuildProject": "../RT.RenderOutput/RT.RenderOutput.csproj"
+    },
+    "RT.Texture/1.0.0": {
+      "type": "project",
+      "path": "../RT.Texture/RT.Texture.csproj",
+      "msbuildProject": "../RT.Texture/RT.Texture.csproj"
     },
     "RT.WorldTransform/1.0.0": {
       "type": "project",

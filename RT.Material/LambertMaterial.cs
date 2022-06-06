@@ -1,30 +1,35 @@
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Material;
 using RT.Primitives.Traceable;
+using RT.Texture;
 
 namespace RT.Material;
 
 public class LambertMaterial : IMaterial
 {
-    private readonly Vector3 _color;
+    
     private static readonly Vector3 White = new Vector3(1f, 1f, 1f);
     private static readonly Vector3 Black = new Vector3(0f, 0f, 0f);
 
-    public LambertMaterial(Vector3 color)
+    private IColorTexture ColorTexture { get; }
+    
+    public LambertMaterial(IColorTexture colorTexture)
     {
-        _color = color;
+        ColorTexture = colorTexture;
     }
 
     public ColorResult CalculateColor(Ray originalRay, HitResult hitResult, ITraceableCollection world,
         int recursionCount = 0)
     {
         var lights = ProcessLights(world, hitResult);
-        
+
+        Vector3 c = ColorTexture.GetColor(hitResult.UVcoordinates);
+     
         var color = new Vector3(
-            _color.X * lights.lightColor.X,
-            _color.Y * lights.lightColor.Y,
-            _color.Z * lights.lightColor.Z
-        );
+            c.X * lights.lightColor.X,
+            c.Y * lights.lightColor.Y,
+            c.Z * lights.lightColor.Z
+        ); 
         
         return new ColorResult(Vector3.Lerp(Black, color, lights.lightPercent), lights.lightPercent);
     }
@@ -55,7 +60,6 @@ public class LambertMaterial : IMaterial
 
             lightPercent += lp;
             c += ((Vector3) light.Color) * lp;
-            // c += (Vector3) light.Color;
         }
 
         c /= world.Lights.Count;

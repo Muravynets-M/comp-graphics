@@ -935,7 +935,8 @@
       "RT.Primitives/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "RT.Math": "1.0.0"
+          "RT.Math": "1.0.0",
+          "RT.Texture": "1.0.0"
         },
         "runtime": {
           "RT.Primitives.dll": {}
@@ -971,6 +972,14 @@
         },
         "runtime": {
           "RT.RenderOutput.dll": {}
+        }
+      },
+      "RT.Texture/1.0.0": {
+        "dependencies": {
+          "RT.Math": "1.0.0"
+        },
+        "runtime": {
+          "RT.Texture.dll": {}
         }
       },
       "RT.WorldTransform/1.0.0": {
@@ -1671,6 +1680,11 @@
       "sha512": ""
     },
     "RT.RenderOutput/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RT.Texture/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

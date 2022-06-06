@@ -2,6 +2,7 @@ using RT.Math.LinearAlgebra;
 using RT.Primitives.Material;
 using RT.Primitives.Traceable;
 using RT.Primitives.Transform;
+using RT.Texture;
 
 namespace RT.Primitives.Primitive;
 
@@ -52,10 +53,21 @@ public class Sphere : ITraceable, ITransform
 
         if (Material is not null)
         {
-            return new HitResult(point, (r.Cast(root) - Origin) / Radius, root, Material);
+            return new HitResult(point, (r.Cast(root) - Origin) / Radius, root, Material, GetUV(point));
         }
 
         return new HitResult(point, (r.Cast(root) - Origin) / Radius, root);
+    }
+
+    private UVcoordinates GetUV(Point3 p)
+    {
+        var theta = MathF.Atan2(-(p.Z - Origin.Z), p.X - Origin.X);
+        var phi = MathF.Acos(-(p.Y - Origin.Y) / Radius);
+
+        var u = (theta + MathF.PI) / (2 * MathF.PI);
+        var v = phi / MathF.PI;
+
+        return new UVcoordinates(u, v);
     }
     
     public void ApplyTransformation(Matrix4x4 matrix)

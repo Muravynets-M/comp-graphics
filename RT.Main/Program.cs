@@ -7,6 +7,7 @@ using RT.Material;
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Primitive;
 using RT.Render;
+using RT.Texture.Color;
 
 IConfiguration config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
@@ -21,16 +22,21 @@ var camera = RenderSetUp.SetUpCamera();
 var glassSphere = new Sphere(new Point3(1f, 0.5f, -0.9f), 0.5f)
 {
     Material = new MirrorMaterial(
-        new Vector3(1f, 0.5f, 0.5f))
+        new OneColorTexture(new Vector3(1f, 0.5f, 0.5f)))
 };
 var lambertSphere = new Sphere(new Point3(1f, 1.5f, -0.9f), 0.5f)
 {
-    Material = new LambertMaterial(new Vector3(1f, 0f, 0f))
+    Material = new LambertMaterial(new CheckersTexture(new Vector3(1f, 0f, 0f), new Vector3(0f, 0f, 1f)))
 };
 
-var lambertPlane = new Plane(-Vector3.Forward, new Point3(0, -10, 0))
+// var lambertPlane = new Plane(-Vector3.Forward, new Point3(0, -10, 0))
+// {
+//     Material = new LambertMaterial(new Vector3(0f, 0.6f, 0.5f)) 
+// };
+
+var lambertPlane = new Plane((Vector3.Up - Vector3.Forward * 0.3f), new Point3(1f, -2f, -0.9f))
 {
-    Material = new LambertMaterial(new Vector3(0f, 0.6f, 0.5f)) 
+    Material = new LambertMaterial(new CheckersTexture(new Vector3(0f, 0.6f, 0.5f), new Vector3(0.5f, 0.6f, 0.5f))) 
 };
 
 world.Traceables.Add(glassSphere);

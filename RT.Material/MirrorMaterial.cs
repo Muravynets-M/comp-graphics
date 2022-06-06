@@ -2,18 +2,19 @@ using System.Drawing;
 using RT.Math.LinearAlgebra;
 using RT.Primitives.Material;
 using RT.Primitives.Traceable;
+using RT.Texture;
 
 namespace RT.Material;
 
 public class MirrorMaterial : IMaterial
 {
-    private readonly Vector3 _tint;
+    private IColorTexture TintTexture { get; }
 
     private static readonly Vector3 Black = new Vector3(0f, 0f, 0f);
 
-    public MirrorMaterial(Vector3 tint)
+    public MirrorMaterial(IColorTexture tintTexture)
     {
-        _tint = tint;
+        TintTexture = tintTexture;
     }
 
     public ColorResult CalculateColor(
@@ -39,19 +40,20 @@ public class MirrorMaterial : IMaterial
                     reflectRay,
                     reflectHitResult,
                     world,
-                    recursionCount++).Color
+                    recursionCount++).Color,
+                TintTexture.GetColor(hitResult.UVcoordinates)
             );
         }
 
         return new ColorResult(Black);
     }
     
-    private ColorResult CombineColors(Vector3 reflectColor)
+    private ColorResult CombineColors(Vector3 reflectColor, Vector3 tint)
     {
         return new ColorResult(new Vector3(
-            _tint.X * reflectColor.X,
-            _tint.Y * reflectColor.Y,
-            _tint.Z * reflectColor.Z
+            tint.X * reflectColor.X,
+            tint.Y * reflectColor.Y,
+            tint.Z * reflectColor.Z
         ));
     }
 }

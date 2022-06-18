@@ -55,6 +55,7 @@ public struct Vector3
     public static Vector3 Right => new Vector3(1f, 0f, 0f);
     public static Vector3 Up => new Vector3(0f, 1f, 0f);
     public static Vector3 Forward => new Vector3(0f, 0f, 1f);
+    public static Vector3 Rgb(int r, int g, int b) => new Vector3(r / 255f, g / 255f, b / 255f);
 
     public override string ToString()
     {

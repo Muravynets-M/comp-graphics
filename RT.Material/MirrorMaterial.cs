@@ -41,7 +41,7 @@ public class MirrorMaterial : IMaterial
                     reflectHitResult,
                     world,
                     recursionCount++).Color,
-                TintTexture.GetColor(hitResult.UVcoordinates)
+                TintTexture.GetUVColor(hitResult.UVcoordinates)
             );
         }
 

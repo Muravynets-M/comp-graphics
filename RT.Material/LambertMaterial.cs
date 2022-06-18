@@ -23,7 +23,7 @@ public class LambertMaterial : IMaterial
     {
         var lights = ProcessLights(world, hitResult);
 
-        Vector3 c = ColorTexture.GetColor(hitResult.UVcoordinates);
+        Vector3 c = ColorTexture.GetUVColor(hitResult.UVcoordinates);
      
         var color = new Vector3(
             c.X * lights.lightColor.X,
@@ -61,7 +61,7 @@ public class LambertMaterial : IMaterial
             lightPercent += lp;
             c += ((Vector3) light.Color) * lp;
         }
-
+        
         c /= world.Lights.Count;
         
         return new Light(c, lightPercent);

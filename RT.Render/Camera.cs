@@ -14,6 +14,8 @@ public class Camera: ITransform
     private readonly Vector3 _w;
     private readonly Vector3 _u;
     private readonly Vector3 _v;
+
+    private Random _random = new Random();
     
     public Camera(Point3 origin, Vector3 direction, float width, float height)
     {
@@ -37,6 +39,19 @@ public class Camera: ITransform
     public Ray GetRay(float x, float y)
     {
         return new Ray(Origin, _lowerLeftCorner + _viewportWidth * x + _viewportHeight * y - Origin);
+    }
+
+    public Ray GetSlightlyRandomRay(float x, float y)
+    {
+        return new Ray(Origin, _lowerLeftCorner +
+                               _viewportWidth * x * NextFloat(500f) +
+                               _viewportHeight * y * NextFloat(500f) -
+                               Origin);
+    }
+
+    private float NextFloat(float scale = 1f)
+    {
+        return 1f - (float) _random.NextDouble() / scale;
     }
     
     public void ApplyTransformation(Matrix4x4 matrix)

@@ -17,14 +17,18 @@ public class FaceLineParser : IObjLineParser
         var firstIndex = line[1].Split("/");
         var vertices = new List<int>();
         var normals = firstIndex.Length > 2 ? new List<int>() : null;
+        var textures = firstIndex.Length > 3 ? new List<int>() : null;
 
         foreach (var indexes in line.Skip(1))
         {
+            if (string.IsNullOrEmpty(indexes))
+                continue;
             var index = indexes.Split("/");
             vertices.Add(int.Parse(index[0]));
+            textures?.Add(int.Parse(index[1]));
             normals?.Add(int.Parse(index[2]));
         }
-
-        _objFileContent.AddFace(vertices, normals);
+        
+        _objFileContent.AddFace(vertices, textures, normals);
     }
 }

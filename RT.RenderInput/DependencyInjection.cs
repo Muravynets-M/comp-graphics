@@ -29,7 +29,8 @@ public static class DependencyInjection
                         new VertexLineParser(objFileContent),
                         new NormalLineParser(objFileContent),
                         new ObjectLineParser(objFileContent),
-                        new MaterialLineParser(objFileContent)
+                        new MaterialLineParser(objFileContent),
+                        new TextureLineParser(objFileContent)
                     );
                 });
                 break;

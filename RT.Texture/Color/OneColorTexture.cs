@@ -4,14 +4,14 @@ namespace RT.Texture.Color;
 
 public class OneColorTexture : IColorTexture
 {
-    private Vector3 _color;
+    public Vector3 Color { get; }
     
     public OneColorTexture(Vector3 color)
     {
-        _color = color;
+        Color = color;
     }
-    public Vector3 GetColor(UVcoordinates uv)
+    public Vector3 GetUVColor(UVcoordinates uv)
     {
-        return _color;
+        return Color;
     }
 }

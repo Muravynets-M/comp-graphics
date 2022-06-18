@@ -11,8 +11,8 @@ public class MatrixNxM<T>
     {
         _matrix = matrix;
         _inRow = inRow;
-        Columns = inRow;
-        Rows = matrix.Count() / inRow;
+        Columns = inRow; 
+        Rows = matrix.Count / inRow;
     }
     
     // Starts from 0 index

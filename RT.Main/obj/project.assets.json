@@ -5428,19 +5428,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "/Users/misha/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\studing\\sem6\\comp_graphics\\RT.Main\\RT.Main.csproj",
+      "projectUniqueName": "/Users/misha/RiderProjects/comp-graphics/RT.Main/RT.Main.csproj",
       "projectName": "RT.Main",
-      "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.Main\\RT.Main.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\studing\\sem6\\comp_graphics\\RT.Main\\obj\\",
+      "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Main/RT.Main.csproj",
+      "packagesPath": "/Users/misha/.nuget/packages/",
+      "outputPath": "/Users/misha/RiderProjects/comp-graphics/RT.Main/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/misha/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -5452,17 +5452,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\studing\\sem6\\comp_graphics\\RT.RenderInput\\RT.RenderInput.csproj": {
-              "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.RenderInput\\RT.RenderInput.csproj"
+            "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj": {
+              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.Render/RT.Render.csproj"
             },
-            "D:\\studing\\sem6\\comp_graphics\\RT.RenderOutput\\RT.RenderOutput.csproj": {
-              "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.RenderOutput\\RT.RenderOutput.csproj"
+            "/Users/misha/RiderProjects/comp-graphics/RT.RenderInput/RT.RenderInput.csproj": {
+              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.RenderInput/RT.RenderInput.csproj"
             },
-            "D:\\studing\\sem6\\comp_graphics\\RT.Render\\RT.Render.csproj": {
-              "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.Render\\RT.Render.csproj"
+            "/Users/misha/RiderProjects/comp-graphics/RT.RenderOutput/RT.RenderOutput.csproj": {
+              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.RenderOutput/RT.RenderOutput.csproj"
             },
-            "D:\\studing\\sem6\\comp_graphics\\RT.WorldTransform\\RT.WorldTransform.csproj": {
-              "projectPath": "D:\\studing\\sem6\\comp_graphics\\RT.WorldTransform\\RT.WorldTransform.csproj"
+            "/Users/misha/RiderProjects/comp-graphics/RT.WorldTransform/RT.WorldTransform.csproj": {
+              "projectPath": "/Users/misha/RiderProjects/comp-graphics/RT.WorldTransform/RT.WorldTransform.csproj"
             }
           }
         }
@@ -5509,7 +5509,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }

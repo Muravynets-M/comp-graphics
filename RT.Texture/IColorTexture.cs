@@ -4,5 +4,5 @@ namespace RT.Texture;
 
 public interface IColorTexture
 {
-    public Vector3 GetColor(UVcoordinates uv);
+    public Vector3 GetUVColor(UVcoordinates uv);
 }

@@ -49,7 +49,7 @@ public class MaterialLineParser : IObjLineParser
             }
             case "texture":
             {
-                _objFileContent.AddMaterial(new LambertMaterial(MatrixTexture.AsRainbowTexture()));
+                _objFileContent.AddMaterial(new LambertMaterial(new RainbowTexture()));
                 break;
             }
             case "luminous":
